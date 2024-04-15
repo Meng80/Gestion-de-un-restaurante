@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="Add files" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/restaurante" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2OI57sjVHmgwtA48ry04QoECjWX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.springboot.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TFG2023\springboot\restaurante\src\views" />
+      <recent name="C:\Users\TFG2023\springboot\restaurante\src\assets" />
+      <recent name="C:\Users\TFG2023\springboot\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TFG2023\springboot\restaurante\src\views" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.springboot" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
+      <module name="springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.springboot.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springboot.SpringbootApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/restaurante/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.CodeGenerator" />
+      <item itemvalue="npm.serve" />
+      <item itemvalue="Spring Boot.SpringbootApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="" />
+      <created>1681235091009</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681235091009</updated>
+      <workItem from="1681235092527" duration="8079000" />
+      <workItem from="1681289839705" duration="16697000" />
+      <workItem from="1682069036632" duration="19069000" />
+      <workItem from="1682167203621" duration="1218000" />
+      <workItem from="1682325911456" duration="20143000" />
+      <workItem from="1683565962653" duration="2698000" />
+      <workItem from="1683607478715" duration="4428000" />
+      <workItem from="1683653196963" duration="3639000" />
+      <workItem from="1683799598396" duration="9379000" />
+      <workItem from="1684789161880" duration="3159000" />
+      <workItem from="1684849002522" duration="8333000" />
+      <workItem from="1685217135643" duration="1068000" />
+      <workItem from="1685273329196" duration="8196000" />
+      <workItem from="1685461251833" duration="781000" />
+      <workItem from="1685725298162" duration="14457000" />
+      <workItem from="1685798997292" duration="6457000" />
+      <workItem from="1686057467393" duration="17416000" />
+      <workItem from="1686231246289" duration="20788000" />
+      <workItem from="1686317614443" duration="14965000" />
+      <workItem from="1686573312788" duration="1217000" />
+      <workItem from="1686650746301" duration="16466000" />
+      <workItem from="1686738301437" duration="12454000" />
+      <workItem from="1686771799338" duration="7547000" />
+      <workItem from="1686822921153" duration="4907000" />
+      <workItem from="1686923114871" duration="4458000" />
+      <workItem from="1686992659987" duration="12998000" />
+      <workItem from="1687007211553" duration="317000" />
+      <workItem from="1687007602060" duration="942000" />
+      <workItem from="1687008585897" duration="4192000" />
+      <workItem from="1687076407283" duration="2405000" />
+      <workItem from="1687158208701" duration="15887000" />
+      <workItem from="1687209976171" duration="825000" />
+      <workItem from="1687251839463" duration="3819000" />
+      <workItem from="1687423381268" duration="24393000" />
+      <workItem from="1687600447438" duration="22480000" />
+      <workItem from="1687681454703" duration="28465000" />
+      <workItem from="1687770633598" duration="9573000" />
+      <workItem from="1687856979896" duration="2086000" />
+      <workItem from="1687861240385" duration="7161000" />
+      <workItem from="1687941421537" duration="13130000" />
+      <workItem from="1687985981245" duration="7107000" />
+      <workItem from="1688032179476" duration="11006000" />
+      <workItem from="1688070121598" duration="11220000" />
+      <workItem from="1688116962052" duration="3614000" />
+      <workItem from="1688203037329" duration="902000" />
+      <workItem from="1688220032873" duration="811000" />
+      <workItem from="1688226675412" duration="8782000" />
+      <workItem from="1688291875046" duration="8690000" />
+      <workItem from="1688323787412" duration="680000" />
+      <workItem from="1688549859819" duration="1723000" />
+      <workItem from="1688585435433" duration="307000" />
+      <workItem from="1688588013601" duration="23086000" />
+      <workItem from="1688978872952" duration="9222000" />
+      <workItem from="1693220061258" duration="2002000" />
+      <workItem from="1707413727858" duration="7600000" />
+      <workItem from="1713175846411" duration="615000" />
+      <workItem from="1713176906656" duration="158000" />
+      <workItem from="1713177123099" duration="65000" />
+      <workItem from="1713177412382" duration="46000" />
+      <workItem from="1713177542364" duration="360000" />
+      <workItem from="1713178196275" duration="398000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add files">
+      <created>1689000665001</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1689000665001</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add files">
+      <created>1689001235930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689001235930</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add files" />
+  </component>
+</project>

@@ -1,0 +1,27 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yang?serverTimezone=GMT%2b2
+    username: root
+    password: 123456
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+ # configuration:
+  #  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+      db-config:
+        logic-delete-field: flag # Entity field name for global logical deletion (since 3.3.0, configuration can skip step 2)
+        logic-delete-value: 1 # Logical deleted value (default is 1)
+        logic-not-delete-value: 0 # Logical not deleted value (default is 0)
+
+files:
+  upload:
+    path: C:/Users/TFG2023/files/
+
