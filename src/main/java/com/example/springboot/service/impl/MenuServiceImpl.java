@@ -25,12 +25,8 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
         if(StrUtil.isNotBlank(name)) {
             queryWrapper.like("name", name);
         }
-
-        //查询所有数据
         List<Menu> list = list(queryWrapper);
-        //找出pid为null的一级菜单
         List<Menu> parentNodes = list.stream().filter(menu -> menu.getPid() == null).collect(Collectors.toList());
-        //找出一级菜单的子菜单
         for (Menu menu : parentNodes){
             menu.setChildren(list.stream().filter(m -> menu.getId().equals(m.getPid())).collect(Collectors.toList()));
         }

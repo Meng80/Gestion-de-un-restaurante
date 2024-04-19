@@ -45,7 +45,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
-                menuService.removeById(id);
+       menuService.removeById(id);
           return Result.success();
         }
 
