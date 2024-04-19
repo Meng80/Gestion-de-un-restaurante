@@ -60,27 +60,24 @@ export const setRoutes = () => {
           })
         }
       })
-      //动态添加到现在的路由对象中去
       router.addRoute(manageRoute)
     }
 
   }
 }
 
-//重置再set一次路由
 setRoutes()
 
 router.beforeEach((to, from, next) => {
-  localStorage.setItem("currentPathName", to.name)  // 设置当前的路由名称，为了在Header组件中去使用
-  store.commit("setPath")  // 触发store的数据更新
+  localStorage.setItem("currentPathName", to.name)
+  store.commit("setPath")
 
-  //未找到路由的情况
   if(!to.matched.length){
     const storeMenus = localStorage.getItem("menus")
     if(storeMenus) {
       next("/404")
     }else {
-      next("/login")//跳回登录页面
+      next("/login")
     }
   }
   next()

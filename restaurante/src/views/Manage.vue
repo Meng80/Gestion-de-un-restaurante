@@ -40,7 +40,6 @@ export default {
     Header
   },
   created() {
-    //从后台获取最新的User数据
     this.getUser()
 
   },
@@ -59,9 +58,7 @@ export default {
     },
     getUser(){
       let username = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).username : ""
-      //从后台获取数据
       this.request.get("/user/username/" + username).then(res => {
-        //重新赋值后台最新的User数据
         this.user = res.data
       })
     }

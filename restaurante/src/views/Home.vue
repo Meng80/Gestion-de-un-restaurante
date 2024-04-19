@@ -57,7 +57,7 @@ export default {
 
     }
   },
-  mounted() { //页面元素渲染之后再触发
+  mounted() {
     var option = {
       title: {
         text: 'VIP customers',
@@ -93,7 +93,6 @@ export default {
       ]
     };
 
-    //饼图
     var pieOption = {
       title: {
         text: 'VIP customers',
@@ -112,13 +111,13 @@ export default {
           name:"123",
           type: 'pie',
           radius: '60%',
-          label:{            //饼图图形上的文本标签
+          label:{
             normal:{
               show:true,
-              position:'inner', //标签的位置
+              position:'inner',
               textStyle : {
                 fontWeight : 300 ,
-                fontSize : 14,    //文字的字体大小
+                fontSize : 14,
                 color: "#fff"
               },
               formatter:'{d}%'
@@ -146,7 +145,6 @@ export default {
       //option.xAxis.data= res.data.x
       option.series[0].data = res.data
       option.series[1].data = res.data
-      //数据准备完毕之后再set
       myChart.setOption(option);
 
 

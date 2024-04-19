@@ -138,7 +138,6 @@ export default {
         this.tableData = res.data.records
         this.total = res.data.total
       })
-      //请求菜单数据
       this.request.get("/menu", {
         params: {
           name: "",
@@ -167,7 +166,6 @@ export default {
           this.$message.success("bind successfully")
           this.menuDialogVis = false
 
-          //操作管理员后需要重新登录
           if(this.roleFlag === 'ROLE_ADMIN') {
             this.$store.commit("logout")
           }
@@ -227,11 +225,8 @@ export default {
       this.roleId = role.id
       this.roleFlag = role.mark
 
-      //请求菜单数据
       this.request.get("/menu").then(res => {
         this.menuData = res.data
-
-        //把后台返回的菜单数据处理成id数组
         this.expends = this.menuData.map(v => v.id)
       })
 

@@ -41,13 +41,12 @@ export default {
   methods: {
     login: function () {
       this.$refs['userForm'].validate((valid) => {
-        if (valid) {  // 表单校验合法
+        if (valid) {
           this.request.post("/user/login", this.user).then(res => {
             if (res.code == '200') {
-              localStorage.setItem("user", JSON.stringify(res.data)) //存储用户信息到浏览器
+              localStorage.setItem("user", JSON.stringify(res.data))
               localStorage.setItem("menus", JSON.stringify(res.data.menus))
 
-              //动态设置当前用户的路由
               setRoutes()
               this.$router.push("/")
               this.$message.success("login success")
