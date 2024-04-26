@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="" />
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="delete menu and fixed">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Person.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Person.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +37,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="82fcd417-810b-48f2-b3e0-be1ca529673e" />
+        <option name="url" value="https://github.com/Meng80/Gestion-de-un-restaurante.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="2OI57sjVHmgwtA48ry04QoECjWX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -189,7 +203,10 @@
       <workItem from="1713178698601" duration="3973000" />
       <workItem from="1713263864103" duration="6498000" />
       <workItem from="1713296788521" duration="980000" />
-      <workItem from="1713520459012" duration="646000" />
+      <workItem from="1713520459012" duration="4036000" />
+      <workItem from="1713525395260" duration="476000" />
+      <workItem from="1713537486195" duration="439000" />
+      <workItem from="1714114972358" duration="3072000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -231,6 +248,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$USER_HOME$" />
+      <path value="$PROJECT_DIR$/../../.." />
+      <path value="$PROJECT_DIR$/../.." />
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$/restaurante" />
+    </ignored-roots>
     <MESSAGE value="Add files" />
     <MESSAGE value="delete menu and fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="delete menu and fixed" />

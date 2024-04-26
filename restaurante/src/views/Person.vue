@@ -2,15 +2,15 @@
   <el-card style="width: 500px;">
     <el-form label-width="80px" size="small">
 
-<!--      <el-upload-->
-<!--          class="avatar-uploader"-->
-<!--          :action="'http://' + serverIp +':9090/file/upload'"-->
-<!--          :show-file-list="false"-->
-<!--          :on-success="handleAvatarSuccess"-->
-<!--      >-->
-<!--        <img v-if="form.avatarUrl" :src="form.avatarUrl" class="avatar">-->
-<!--        <i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
-<!--      </el-upload>-->
+      <el-upload
+          class="avatar-uploader"
+          :action="'http://' + serverIp +':9090/file/upload'"
+          :show-file-list="false"
+          :on-success="handleAvatarSuccess"
+      >
+        <img v-if="form.avatarUrl" :src="form.avatarUrl" class="avatar">
+        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+      </el-upload>
 
       <el-form-item label="username">
         <el-input v-model="form.username" disabled autocomplete="off"></el-input>
@@ -36,14 +36,14 @@
 
 <script>
 
-// import {serverIp} from "../../public/config";
+import {serverIp} from "../../public/Config";
 
 
 export default {
   name: "Person",
   data() {
     return {
-      // serverIp: serverIp,
+      serverIp: serverIp,
       form: {},
       user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
     }
@@ -63,10 +63,8 @@ export default {
         if (res.code === '200') {
           this.$message.success("Saved successfully")
 
-          // 触发父级更新User的方法
           this.$emit("refreshUser")
 
-          // 更新浏览器存储的用户信息
           this.getUser().then(res => {
             res.token = JSON.parse(localStorage.getItem("user")).token
             localStorage.setItem("user", JSON.stringify(res))
