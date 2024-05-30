@@ -27,61 +27,59 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ada
  * @since 2023-06-22
  */
-@RestController
-@RequestMapping("/menu")
-     public class MenuController {
-    
-@Resource
-     private IMenuService menuService;
+    @RestController
+    @RequestMapping("/menu")
+         public class MenuController {
 
-@Resource
-     private DictMapper dictMapper;
+    @Resource
+         private IMenuService menuService;
 
-@PostMapping
-    public Result save(@RequestBody Menu menu){
-       menuService.saveOrUpdate(menu);
-          return Result.success();
-        }
+    @Resource
+         private DictMapper dictMapper;
 
-@DeleteMapping("/{id}")
-    public Result delete(@PathVariable Integer id){
-       menuService.removeById(id);
-          return Result.success();
-        }
+    @PostMapping
+        public Result save(@RequestBody Menu menu){
+           menuService.saveOrUpdate(menu);
+              return Result.success();
+            }
 
-@PostMapping("/del/batch")
-   public Result deleteBatch(@RequestBody List<Integer> ids) {
-       menuService.removeByIds(ids);
-          return Result.success();
-        }
+    @DeleteMapping("/{id}")
+        public Result delete(@PathVariable Integer id){
+           menuService.removeById(id);
+              return Result.success();
+            }
 
+    @PostMapping("/del/batch")
+       public Result deleteBatch(@RequestBody List<Integer> ids) {
+           menuService.removeByIds(ids);
+              return Result.success();
+            }
 
-        @PostMapping("/ids")
-    public Result findAllIds() {
-          return Result.success(menuService.list().stream().map(Menu::getId));
+    @PostMapping("/ids")
+       public Result findAllIds() {
+        return Result.success(menuService.list().stream().map(Menu::getId));
     }
 
-//buscar todos
-@GetMapping
-   public Result findALL(@RequestParam(defaultValue = "") String name){
-    return Result.success(menuService.findMenus(name));
-        }
+    @GetMapping
+       public Result findALL(@RequestParam(defaultValue = "") String name){
+        return Result.success(menuService.findMenus(name));
+            }
 
-@GetMapping("/{id}")
-    public Result findOne(@PathVariable Integer id) {
-        return Result.success(menuService.getById(id));
+    @GetMapping("/{id}")
+        public Result findOne(@PathVariable Integer id) {
+            return Result.success(menuService.getById(id));
 
-        }
+            }
 
-@GetMapping("/page")
-    public Result findPage(@RequestParam String name,
-                           @RequestParam Integer pageNum,
-                           @RequestParam Integer pageSize) {
-        QueryWrapper<Menu> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("name", name);
-        queryWrapper.orderByDesc("id");
-        return Result.success(menuService.page(new Page<>(pageNum, pageSize), queryWrapper));
-        }
+    @GetMapping("/page")
+        public Result findPage(@RequestParam String name,
+                               @RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize) {
+            QueryWrapper<Menu> queryWrapper = new QueryWrapper<>();
+            queryWrapper.like("name", name);
+            queryWrapper.orderByDesc("id");
+            return Result.success(menuService.page(new Page<>(pageNum, pageSize), queryWrapper));
+            }
 
     @GetMapping("/icons")
     public Result getIcons() {

@@ -1,6 +1,5 @@
 package com.example.springboot.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -9,7 +8,7 @@ import lombok.Data;
 @Data
 public class RoleMenu {
 
-    @TableId("roleId")
+    @TableId("role_id")
     private Integer roleId;
     private Integer menuId;
 }

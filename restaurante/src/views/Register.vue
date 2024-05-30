@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div style="margin: 150px auto; background-color: #fff; width: 350px; height: 350px; padding: 20px; border-radius: 10px">
-      <div style="margin: 20px 0; text-align: center; font-size: 24px"><b>Please confirm your password</b></div>
+      <div style="margin: 20px 0; text-align: center; font-size: 24px"><b>Register</b></div>
       <el-form :model="user" :rules="rules" ref="userForm">
         <el-form-item prop="username">
           <el-input placeholder="Please input Username" size="medium" prefix-icon="el-icon-user" v-model="user.username"></el-input>

@@ -7,6 +7,7 @@
           :action="'http://' + serverIp +':9090/file/upload'"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
+          :before-upload="beforeAvatarUpload"
       >
         <img v-if="form.avatarUrl" :src="form.avatarUrl" class="avatar">
         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -77,6 +78,18 @@ export default {
     },
     handleAvatarSuccess(res) {
       this.form.avatarUrl = res
+    },
+    beforeAvatarUpload(file) {
+      const isJPG = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/webp'
+      const isLt2M = file.size / 1024 / 1024 < 2
+
+      if (!isJPG) {
+        this.$message.error('Avatar picture must be JPG or PNG format!')
+      }
+      if (!isLt2M) {
+        this.$message.error('Avatar picture size can not exceed 2MB!')
+      }
+      return isJPG && isLt2M
     }
   }
 }
@@ -85,7 +98,7 @@ export default {
 <style>
 .avatar-uploader {
   text-align: center;
-  padding-bottom: 10px;
+  border-radius: 10px;
 }
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;

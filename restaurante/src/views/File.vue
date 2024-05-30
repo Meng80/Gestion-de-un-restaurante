@@ -33,7 +33,11 @@
           <el-button type="primary" @click="download(scope.row.url)">download</el-button>
         </template>
       </el-table-column>
-
+      <el-table-column label="enable">
+        <template slot-scope="scope">
+          <el-switch v-model="scope.row.enable" active-color="#13ce66" inactive-color="#ccc" @change="changeEnable(scope.row)"></el-switch>
+        </template>
+      </el-table-column>
       <el-table-column label="operate"  width="200" align="center">
         <template slot-scope="scope">
           <el-popconfirm
@@ -97,20 +101,27 @@ export default {
     changeEnable(row) {
       this.request.post("/file/update", row).then(res => {
         if (res.code === '200') {
-          this.$message.success("Successful operation")
+          this.$message.success("Successful operation");
+        } else {
+          this.$message.error("Operation failed");
         }
-      })
+      }).catch(error => {
+        this.$message.error("Network error");
+      });
     },
     del(id) {
       this.request.delete("/file/" + id).then(res => {
         if (res.code === '200') {
-          this.$message.success("successfully deleted")
-          this.load()
+          this.$message.success("Successfully deleted");
+          this.load();
         } else {
-          this.$message.error("Failed to delete")
+          this.$message.error("Failed to delete");
         }
-      })
+      }).catch(error => {
+        this.$message.error("Network error");
+      });
     },
+
     handleSelectionChange(val) {
       console.log(val)
       this.multipleSelection = val
@@ -143,6 +154,7 @@ export default {
     handleFileUploadSuccess(res) {
       console.log(res)
       this.load()
+      this.changeEnable(res.data)
     },
     download(url) {
       window.open(url)

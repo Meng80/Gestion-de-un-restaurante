@@ -17,7 +17,7 @@ import com.example.springboot.entity.Role;
 
 /**
  * <p>
- *  前端控制器
+ *  RoleController
  * </p>
  *
  * @author ada
@@ -48,7 +48,6 @@ import com.example.springboot.entity.Role;
           return Result.success();
         }
 
-   //buscar todos
    @GetMapping
    public Result findALL(){
           return Result.success(roleService.list());

@@ -54,7 +54,7 @@ export default {
   name: "Home",
   data() {
     return{
-
+      isAdmin: false
     }
   },
   mounted() {
@@ -74,7 +74,7 @@ export default {
       },
       xAxis: {
         type: 'category',
-        data: ["1-3", "4-6", "7-9", "10-12"]
+        data: ['1-3', '4-6', '7-9', '10-12']
       },
       yAxis: {
         type: 'value'
@@ -108,20 +108,16 @@ export default {
       },
       series: [
         {
-          name:"123",
+          name: "123",
           type: 'pie',
           radius: '60%',
-          label:{
-            normal:{
-              show:true,
-              position:'inner',
-              textStyle : {
-                fontWeight : 300 ,
-                fontSize : 14,
-                color: "#fff"
-              },
-              formatter:'{d}%'
-            }
+          label: {
+            show: true,
+            position: 'inner',
+            fontWeight: 300,
+            fontSize: 14,
+            color: "#fff",
+            formatter: '{d}%'
           },
           data: [],
           emphasis: {
@@ -142,7 +138,8 @@ export default {
     var pieChart = echarts.init(pieDom);
 
     this.request.get("/echarts/members").then(res => {
-      //option.xAxis.data= res.data.x
+      const xAxisLabels = ['1-3', '4-6', '7-9', '10-12'];
+      option.xAxis.data= xAxisLabels;
       option.series[0].data = res.data
       option.series[1].data = res.data
       myChart.setOption(option);

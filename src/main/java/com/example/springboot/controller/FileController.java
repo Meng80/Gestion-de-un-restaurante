@@ -50,32 +50,25 @@ public class FileController {
         String type = FileUtil.extName(originalFilename);
         long size = file.getSize();
 
-        // Define a unique identifier for the file
         String uuid = IdUtil.fastSimpleUUID();
-        String fileUUID = uuid + StrUtil.DOT + type;
+        String fileName = uuid + StrUtil.DOT + type;
 
-        File uploadFile = new File(fileUploadPath + fileUUID);
-        // Check if the configured file directory exists, if not, create a new file directory
+        File uploadFile = new File(fileUploadPath + fileName);
         File parentFile = uploadFile.getParentFile();
         if(!parentFile.exists()) {
             parentFile.mkdirs();
         }
 
         String url;
-        // Get the MD5 of the file
         String md5 = SecureUtil.md5(file.getInputStream());
-        // Query from the database whether there are duplicate records
         Files dbFiles = getFileByMd5(md5);
-        if (dbFiles != null) { // File already exists
+        if (dbFiles != null) {
             url = dbFiles.getUrl();
         } else {
-            // Upload file to disk
             file.transferTo(uploadFile);
-            // If duplicate files do not exist in the database, the uploaded file will not be deleted
-            url = "http://localhost:9090/file/" + fileUUID;
+            url = "http://localhost:9090/file/" + fileName;
         }
 
-        // Store in the database
         Files saveFile = new Files();
         saveFile.setName(originalFilename);
         saveFile.setType(type);
@@ -88,16 +81,16 @@ public class FileController {
     }
 
     /**
-     * File download interface     http://localhost:9090/file/{fileUUID};
-     * @param fileUUID
+     * File download interface     http://localhost:9090/file/{fileName};
+     * @param fileName
      * @param response
      * @throws IOException
      */
-    @GetMapping("/{fileUUID}")
-    public void download(@PathVariable String fileUUID, HttpServletResponse response) throws IOException {
-        File uploadFile = new File(fileUploadPath + fileUUID);
+    @GetMapping("/{fileName}")
+    public void download(@PathVariable String fileName, HttpServletResponse response) throws IOException {
+        File uploadFile = new File(fileUploadPath + fileName);
         ServletOutputStream os = response.getOutputStream();
-        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileUUID, "UTF-8"));
+        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
         response.setContentType("application/octet-stream");
 
         os.write(FileUtil.readBytes(uploadFile));
