@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -48,7 +49,12 @@ public class Vip implements Serializable {
       private String address;
 
       @ApiModelProperty("create_time")
+      @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
       private Date createTime;
+
+      @ApiModelProperty("last_Visit")
+      @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+      private LocalDateTime lastVisit;
 
 
 }

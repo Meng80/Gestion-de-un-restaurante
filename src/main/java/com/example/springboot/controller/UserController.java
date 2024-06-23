@@ -80,7 +80,6 @@ public class UserController {
         return Result.success(userService.removeByIds(ids));
     }
 
-    //buscar todos
     @GetMapping
     public Result findALL() {
 
@@ -127,7 +126,6 @@ public class UserController {
     @GetMapping("/export")
     public void export(HttpServletResponse response) throws Exception {
         List<User> list = userService.list();
-        //     ExcelWriter writer = ExcelUtil.getWriter(filesUploadPath + "/UserInformation.xlsx");
         ExcelWriter writer = ExcelUtil.getWriter(true);
         writer.write(list, true);
 
@@ -143,7 +141,7 @@ public class UserController {
     }
 
     /**
-     * excel 导入
+     * excel import
      * @param file
      * @throws Exception
      */

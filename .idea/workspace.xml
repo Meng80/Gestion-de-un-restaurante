@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="fixed files, person and role">
-      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Menu.vue" afterDir="false" />
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added search functionality for VIP customers visited">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/File.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Person.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Person.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Role.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/RoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/RoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/controller.java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/entity/RoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/entity/RoleMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/controller.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Vip.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Vip.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Vip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Vip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/VipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/VipController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/entity/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/entity/Vip.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +228,13 @@
       <workItem from="1716580721722" duration="1969000" />
       <workItem from="1716629673555" duration="9380000" />
       <workItem from="1716929611056" duration="3281000" />
-      <workItem from="1717101968188" duration="646000" />
+      <workItem from="1717101968188" duration="2746000" />
+      <workItem from="1717326348697" duration="1395000" />
+      <workItem from="1717929570390" duration="2519000" />
+      <workItem from="1717933471335" duration="4413000" />
+      <workItem from="1719069467840" duration="13332000" />
+      <workItem from="1719166747953" duration="1845000" />
+      <workItem from="1719168776836" duration="2281000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -271,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714118484702</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed files, person and role">
+      <created>1717102642100</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717102642100</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

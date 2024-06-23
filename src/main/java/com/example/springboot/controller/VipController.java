@@ -11,6 +11,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.net.URLEncoder;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.springboot.common.Result;
@@ -30,7 +32,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/vip")
         public class VipController {
-    
+
 @Resource
     private IVipService vipService;
 
@@ -52,7 +54,6 @@ import org.springframework.web.multipart.MultipartFile;
           return Result.success();
         }
 
-//buscar todos
 @GetMapping
    public Result findALL(){
           return Result.success(vipService.list());
@@ -70,10 +71,15 @@ import org.springframework.web.multipart.MultipartFile;
                            @RequestParam Integer pageNum,
                            @RequestParam Integer pageSize) {
         QueryWrapper<Vip> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("name", name);
+        if (name != null && !name.isEmpty()) {
+            queryWrapper.like("name", name);
+        }
+
         queryWrapper.orderByDesc("id");
+        System.out.println("Executing query with parameters: name=" + name + ", pageNum=" + pageNum + ", pageSize=" + pageSize);
         return Result.success(vipService.page(new Page<>(pageNum, pageSize), queryWrapper));
         }
+
 
     /**
      * export interface
@@ -81,9 +87,7 @@ import org.springframework.web.multipart.MultipartFile;
     @GetMapping("/export")
     public void export(HttpServletResponse response) throws Exception {
         List<Vip> list = vipService.list();
-//        ExcelWriter writer = ExcelUtil.getWriter(filesUploadPath + "/UserInformation.xlsx");
         ExcelWriter writer = ExcelUtil.getWriter(true);
-
         writer.write(list, true);
 
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
@@ -107,9 +111,31 @@ import org.springframework.web.multipart.MultipartFile;
         InputStream inputStream = file.getInputStream();
         ExcelReader reader = ExcelUtil.getReader(inputStream);
         List<Vip> list = reader.readAll(Vip.class);
-//        System.out.println(list);
         vipService.saveBatch(list);
         return Result.success(true);
     }
+
+    @GetMapping("/recent")
+    public Result getRecentVisitors(@RequestParam String period) {
+        QueryWrapper<Vip> queryWrapper = new QueryWrapper<>();
+        LocalDateTime now = LocalDateTime.now();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        System.out.println("Current date and time: " + now.format(formatter));
+
+        if ("lastMonth".equalsIgnoreCase(period)) {
+            LocalDateTime oneMonthAgo = now.minusMonths(1);
+            queryWrapper.ge("last_Visit", oneMonthAgo);
+            System.out.println("Querying VIPs who visited in the last month since: " + oneMonthAgo.format(formatter));
+        } else if ("longTimeNoVisit".equalsIgnoreCase(period)) {
+            LocalDateTime sixMonthsAgo = now.minusMonths(6);
+            queryWrapper.le("last_Visit", sixMonthsAgo);
+            System.out.println("Querying VIPs who haven't visited in the last 6 months since: " + sixMonthsAgo.format(formatter));
+        }
+
+        List<Vip> vipList = vipService.list(queryWrapper);
+        return Result.success(vipList);
+    }
+
 }
 
