@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import {setRoutes} from "@/router";
+
 
 export default {
   name: "Login",
@@ -47,7 +47,6 @@ export default {
               localStorage.setItem("user", JSON.stringify(res.data))
               localStorage.setItem("menus", JSON.stringify(res.data.menus))
 
-              setRoutes()
               this.$router.push("/")
               this.$message.success("login success")
             } else {

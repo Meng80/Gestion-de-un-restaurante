@@ -27,15 +27,15 @@ request.interceptors.response.use(
             res = res ? JSON.parse(res) : res
         }
         if (res.code === '401') {
-            // ElementUI.Message({
-            //     message: res.msg,
-            //     type: 'error'
-            // });
+            ElementUI.Message({
+                message: res.msg,
+                type: 'error'
+            });
         }
         return res;
     },
     error => {
-        console.log('err' + error) // for debug
+        console.log('err' + error)
         return Promise.reject(error)
     }
 )
