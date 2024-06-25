@@ -69,14 +69,21 @@ import org.springframework.web.multipart.MultipartFile;
 @GetMapping("/page")
     public Result findPage(@RequestParam String name,
                            @RequestParam Integer pageNum,
-                           @RequestParam Integer pageSize) {
+                           @RequestParam Integer pageSize,
+                           @RequestParam(defaultValue = "") String email,
+                           @RequestParam(defaultValue = "") String address) {
         QueryWrapper<Vip> queryWrapper = new QueryWrapper<>();
         if (name != null && !name.isEmpty()) {
             queryWrapper.like("name", name);
         }
+        if (!"".equals(email)) {
+            queryWrapper.like("email", email);
+        }
+        if (!"".equals(address)) {
+            queryWrapper.like("address", address);
+        }
 
         queryWrapper.orderByDesc("id");
-        System.out.println("Executing query with parameters: name=" + name + ", pageNum=" + pageNum + ", pageSize=" + pageSize);
         return Result.success(vipService.page(new Page<>(pageNum, pageSize), queryWrapper));
         }
 

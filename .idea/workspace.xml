@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added search functionality for VIP customers visited">
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Vip.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Vip.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/utils/reques.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/utils/reques.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Vip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Vip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/VipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/VipController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/entity/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/entity/Vip.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
       <recent name="com.example.springboot" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
       <module name="springboot" />
@@ -234,7 +234,8 @@
       <workItem from="1717933471335" duration="4413000" />
       <workItem from="1719069467840" duration="13332000" />
       <workItem from="1719166747953" duration="1845000" />
-      <workItem from="1719168776836" duration="2281000" />
+      <workItem from="1719168776836" duration="3026000" />
+      <workItem from="1719264173673" duration="10149000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -271,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717102642100</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added search functionality for VIP customers visited">
+      <created>1719180081555</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719180081555</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +309,7 @@
     <MESSAGE value="delete menu and fixed" />
     <MESSAGE value="fixed persona avatar" />
     <MESSAGE value="fixed files, person and role" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed files, person and role" />
+    <MESSAGE value="added search functionality for VIP customers visited" />
+    <option name="LAST_COMMIT_MESSAGE" value="added search functionality for VIP customers visited" />
   </component>
 </project>
