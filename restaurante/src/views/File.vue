@@ -105,8 +105,6 @@ export default {
         } else {
           this.$message.error("Operation failed");
         }
-      }).catch(error => {
-        this.$message.error("Network error");
       });
     },
     del(id) {

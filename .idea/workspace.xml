@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/utils/reques.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/utils/reques.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/VipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/VipController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/File.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +89,7 @@
       <recent name="com.example.springboot" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+  <component name="RunManager" selected="npm.serve">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
       <module name="springboot" />
@@ -235,7 +230,8 @@
       <workItem from="1719069467840" duration="13332000" />
       <workItem from="1719166747953" duration="1845000" />
       <workItem from="1719168776836" duration="3026000" />
-      <workItem from="1719264173673" duration="10149000" />
+      <workItem from="1719264173673" duration="11509000" />
+      <workItem from="1720645630440" duration="2267000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -279,7 +275,21 @@
       <option name="project" value="LOCAL" />
       <updated>1719180081555</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added search lastVisit customer VIP">
+      <created>1719275924094</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719275924094</updated>
+    </task>
+    <task id="LOCAL-00008" summary="changed router">
+      <created>1719275971420</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719275971420</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +320,8 @@
     <MESSAGE value="fixed persona avatar" />
     <MESSAGE value="fixed files, person and role" />
     <MESSAGE value="added search functionality for VIP customers visited" />
-    <option name="LAST_COMMIT_MESSAGE" value="added search functionality for VIP customers visited" />
+    <MESSAGE value="added search lastVisit customer VIP" />
+    <MESSAGE value="changed router" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed router" />
   </component>
 </project>
