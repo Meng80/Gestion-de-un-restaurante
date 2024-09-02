@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.springboot.common.Constants;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.UserDTO;
+import com.example.springboot.controller.dto.UserPasswordDTO;
 import com.example.springboot.entity.User;
 import com.example.springboot.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -153,6 +154,19 @@ public class UserController {
         userService.saveBatch(list);
         return Result.success(true);
     }
+
+    /**
+     * change Password
+     *
+     * @param userPasswordDTO
+     * @return
+     */
+    @PostMapping("/password")
+    public Result password(@RequestBody UserPasswordDTO userPasswordDTO) {
+        userService.updatePassword(userPasswordDTO);
+        return Result.success();
+    }
+
 }
 
 
