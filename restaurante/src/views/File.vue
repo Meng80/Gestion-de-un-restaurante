@@ -30,10 +30,15 @@
       <el-table-column prop="size" label="file size(kb)"></el-table-column>
       <el-table-column label="download">
         <template slot-scope="scope">
-          <el-button type="primary" @click="download(scope.row.url)">download</el-button>
+          <el-button
+              type="primary"
+              :disabled="!scope.row.enable"
+              @click="scope.row.enable ? download(scope.row.url) : notifyDisabledDownload">
+            download
+          </el-button>
         </template>
       </el-table-column>
-      <el-table-column label="enable">
+      <el-table-column label="enable" v-if="isAdmin">
         <template slot-scope="scope">
           <el-switch v-model="scope.row.enable" active-color="#13ce66" inactive-color="#ccc" @change="changeEnable(scope.row)"></el-switch>
         </template>
@@ -41,16 +46,17 @@
       <el-table-column label="operate"  width="200" align="center">
         <template slot-scope="scope">
           <el-popconfirm
+              v-if="scope.row.enable"
               class="ml-5"
               confirm-button-text='OK'
               cancel-button-text='Let me think again'
               icon="el-icon-info"
               icon-color="red"
               title="Are you sure you want to delete it?"
-              @confirm="del(scope.row.id)"
-          >
-            <el-button type="danger" slot="reference">delete <i class="el-icon-remove-outline"></i></el-button>
+              @confirm="del(scope.row.id)" >
+          <el-button type="danger" slot="reference">delete <i class="el-icon-remove-outline"></i></el-button>
           </el-popconfirm>
+            <el-button type="danger" disabled v-else @click="notifyDisabledDelete">delete <i class="el-icon-remove-outline"></i></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -78,11 +84,14 @@ export default {
       multipleSelection: [],
       pageNum: 1,
       pageSize: 10,
-      total: 0
+      total: 0,
+      isAdmin: false,
+      currentUserName : ''
     }
   },
   created() {
     this.load()
+    this.checkUserRole();
   },
   methods: {
     load() {
@@ -91,11 +100,24 @@ export default {
           pageNum: this.pageNum,
           pageSize: this.pageSize,
           name: this.name,
+          isEnabled: true,
         }
       }).then(res => {
         this.tableData = res.data.records
         this.total = res.data.total
-
+      })
+    },
+    checkUserRole() {
+      this.request.get("/user/current").then(res => {
+        console.log(res);
+        if (res.data === 'admin') {
+          this.isAdmin = true;
+        } else {
+          this.isAdmin = false;
+        }
+      }).catch(error => {
+        console.error("get current User Id error", error);
+        this.isAdmin = false;
       })
     },
     changeEnable(row) {
@@ -119,7 +141,6 @@ export default {
         this.$message.error("Network error");
       });
     },
-
     handleSelectionChange(val) {
       console.log(val)
       this.multipleSelection = val
@@ -156,6 +177,12 @@ export default {
     },
     download(url) {
       window.open(url)
+    },
+    notifyDisabledDownload() {
+      this.$message.error("El archivo está deshabilitado, no se puede descargar.");
+    },
+    notifyDisabledDelete() {
+      this.$message.error("El archivo está deshabilitado, no se puede eliminar.");
     }
   }
 

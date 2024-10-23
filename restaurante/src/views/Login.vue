@@ -47,7 +47,7 @@ export default {
               localStorage.setItem("user", JSON.stringify(res.data))
               localStorage.setItem("menus", JSON.stringify(res.data.menus))
 
-              this.$router.push("/")
+              this.$router.push("/home")
               this.$message.success("login success")
             } else {
               this.$message.error(res.msg)

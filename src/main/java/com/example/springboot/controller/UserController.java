@@ -14,6 +14,7 @@ import com.example.springboot.controller.dto.UserDTO;
 import com.example.springboot.controller.dto.UserPasswordDTO;
 import com.example.springboot.entity.User;
 import com.example.springboot.service.IUserService;
+import com.example.springboot.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.net.URLEncoder;
 import java.util.List;
+
+import static com.example.springboot.common.Constants.CODE_500;
+import static com.example.springboot.common.Constants.CODE_600;
 
 
 /**
@@ -91,6 +95,20 @@ public class UserController {
     public Result findOne(@PathVariable Integer id) {
 
         return Result.success(userService.getById(id));
+    }
+
+    @GetMapping("/current")
+    public Result findCurrentName() {
+        try{
+            User currentUser = TokenUtils.getCurrentUser();
+            if (currentUser != null) {
+                return Result.success(currentUser.getUsername());
+            } else {
+                return Result.error(CODE_500, "Error");
+            }
+        } catch (Exception e) {
+            return Result.error(CODE_600, "Error");
+        }
     }
 
     @GetMapping("/username/{username}")

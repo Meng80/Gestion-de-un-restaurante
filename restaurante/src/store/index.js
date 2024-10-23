@@ -7,8 +7,12 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        currentPathName: ''
+        currentPathName: '',
+        role:'admin',
     },
+    // getters: {
+    //     getCurrentUser: state => state.user,
+    // };
     mutations: {
         setPath (state) {
             state.currentPathName = localStorage.getItem("currentPathName")

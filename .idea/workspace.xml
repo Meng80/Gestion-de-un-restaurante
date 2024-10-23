@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="fixed file">
-      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Password.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserPasswordDTO.java" afterDir="false" />
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurante/src/views/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/File.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Files.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/UserMapper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +244,12 @@
       <workItem from="1724365683288" duration="2600000" />
       <workItem from="1724510750757" duration="9748000" />
       <workItem from="1724882150319" duration="2504000" />
-      <workItem from="1725317493050" duration="3507000" />
+      <workItem from="1725317493050" duration="3747000" />
+      <workItem from="1725915096137" duration="1199000" />
+      <workItem from="1726002230939" duration="3592000" />
+      <workItem from="1727038819297" duration="3326000" />
+      <workItem from="1727935588834" duration="7716000" />
+      <workItem from="1728940725732" duration="32108000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -317,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720648231510</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added edit password">
+      <created>1725321391005</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1725321391005</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +355,7 @@
     <MESSAGE value="added search lastVisit customer VIP" />
     <MESSAGE value="changed router" />
     <MESSAGE value="fixed file" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed file" />
+    <MESSAGE value="added edit password" />
+    <option name="LAST_COMMIT_MESSAGE" value="added edit password" />
   </component>
 </project>
