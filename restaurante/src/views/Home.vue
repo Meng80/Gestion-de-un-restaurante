@@ -3,36 +3,22 @@
     <el-row :span="10" style="margin-bottom: 40px">
       <el-col :span="6">
         <el-card style="color: #409EFF">
-          <div><i class="el-icon-user-solid"/> total number of customers</div>
+          <div><i class="el-icon-user-solid"/> Número total de empleados</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            100
+            {{ totalEmployees }}
           </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card style="color: #FC466B">
-          <div><i class="el-icon-money"/> total sales</div>
+          <div><i class="el-icon-money"/> Número total de clientes VIP</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            €1000000
+            {{ totalVIPCustomers }}
           </div>
         </el-card>
       </el-col>
-      <el-col :span="6">
-        <el-card style="color: #67C23A">
-          <div><i class="el-icon-coin"/> total income</div>
-          <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            € 300000
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card style="color: #E6A23C">
-          <div><i class="el-icon-s-shop"/> total number of stores</div>
-          <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            15
-          </div>
-        </el-card>
-      </el-col>
+
+
     </el-row>
     <el-row>
       <el-col :span="12">
@@ -54,10 +40,24 @@ export default {
   name: "Home",
   data() {
     return{
-      isAdmin: false
+      isAdmin: false,
+      totalEmployees: 0,
+      totalVIPCustomers: 0,
     }
   },
   mounted() {
+    this.request.get("/echarts/totalEmployees").then(res => {
+      this.totalEmployees = res.data;
+    }).catch(error => {
+      console.error("Error fetching total employees:", error);
+    });
+
+    this.request.get("/echarts/totalVIPCustomers").then(res => {
+      this.totalVIPCustomers = res.data;
+    }).catch(error => {
+      console.error("Error fetching total employees:", error);
+    });
+
     var option = {
       title: {
         text: 'VIP customers',

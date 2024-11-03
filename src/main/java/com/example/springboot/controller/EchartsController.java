@@ -4,21 +4,16 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.Quarter;
 import com.example.springboot.common.Result;
-import com.example.springboot.entity.User;
 import com.example.springboot.entity.Vip;
-import com.example.springboot.service.IUserService;
 import com.example.springboot.service.IVipService;
-import lombok.Data;
+import com.example.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/echarts")
@@ -26,14 +21,25 @@ public class EchartsController {
 
     @Autowired
     private IVipService vipService;
+    private UserService userService;
 
-//    @GetMapping("/example")
-//    public Result get() {
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("x", CollUtil.newArrayList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
-//        map.put("y", CollUtil.newArrayList(150, 230, 224, 218, 135, 147, 260));
-//        return Result.success(map);
-//    }
+    @Autowired
+    public EchartsController(IVipService vipService, UserService userService) {
+        this.vipService = vipService;
+        this.userService = userService;
+    }
+
+    @GetMapping("/totalEmployees")
+    public Result getTotalEmployees() {
+        int totalEmployees = (int) userService.count();
+        return Result.success(totalEmployees);
+    }
+
+    @GetMapping("/totalVIPCustomers")
+    public Result getTotalVIPCustomers() {
+        int totalVIPCustomers = (int) vipService.count();
+        return Result.success(totalVIPCustomers);
+    }
 
     @GetMapping("/members")
     public Result members() {
