@@ -6,11 +6,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/global.css'
 import request from "@/utils/reques";
 import store from './store';
+import locale from 'element-ui/lib/locale/lang/es';
 
 
 Vue.config.productionTip = false
 
-Vue.use(ElementUI, { size: "mini" });
+Vue.use(ElementUI, { locale, size: "mini" });
 
 Vue.prototype.request= request
 

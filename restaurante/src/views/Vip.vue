@@ -82,7 +82,13 @@
           <el-input v-model="form.address" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="last_Visit" >
-          <el-input v-model="form.lastVisit" autocomplete="off"></el-input>
+          <el-date-picker
+              v-model="form.lastVisit"
+              type="datetime"
+              placeholder="Select date and time"
+              format="yyyy-MM-dd HH:mm:ss"
+              value-format="yyyy-MM-dd HH:mm:ss"
+          ></el-date-picker>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">

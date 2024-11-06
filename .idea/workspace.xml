@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/EchartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/EchartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/EchartsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/EchartsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Vip.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Vip.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/EchartsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/EchartsController$1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +245,7 @@
       <workItem from="1726002230939" duration="3592000" />
       <workItem from="1727038819297" duration="3326000" />
       <workItem from="1727935588834" duration="7716000" />
-      <workItem from="1728940725732" duration="39355000" />
+      <workItem from="1728940725732" duration="42927000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -324,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729717912897</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed home.vue added number of VIP customers and employees">
+      <created>1730673297612</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730673297612</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +367,7 @@
     <MESSAGE value="fixed file" />
     <MESSAGE value="added edit password" />
     <MESSAGE value="added enable file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added enable file" />
+    <MESSAGE value="fixed home.vue added number of VIP customers and employees" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed home.vue added number of VIP customers and employees" />
   </component>
 </project>
