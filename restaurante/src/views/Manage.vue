@@ -44,13 +44,13 @@ export default {
 
   },
   methods: {
-    collapse() {  // Haga clic en el botón de reducción para activar
+    collapse() {
       this.isCollapse = !this.isCollapse
       if (this.isCollapse) {  // encoger
         this.sideWidth = 64
         this.collapseBtnClass = 'el-icon-s-unfold'
         this.logoTextShow = false
-      } else {   // expandir
+      } else {
         this.sideWidth = 200
         this.collapseBtnClass = 'el-icon-s-fold'
         this.logoTextShow = true
@@ -58,7 +58,7 @@ export default {
     },
     getUser(){
       let username = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).username : ""
-      this.request.get("/user/username/" + username).then(res => {
+      this.request.get("/user/" + username).then(res => {
         this.user = res.data
       })
     }

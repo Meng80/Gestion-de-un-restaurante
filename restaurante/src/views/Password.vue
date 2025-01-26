@@ -55,7 +55,7 @@ export default {
             this.$message.error("The password you entered twice is different")
             return false
           }
-          this.request.post("/user/password", this.form).then(res => {
+          this.request.put("/user/password", this.form).then(res => {
             if (res.code === '200') {
               this.$message.success("Modification successful")
               this.$store.commit("logout")

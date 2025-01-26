@@ -141,7 +141,7 @@ export default {
       })
     },
     save(){
-      this.request.post("/user", this.form).then(res => {
+      this.request.put("/user", this.form).then(res => {
         if(res.code === '200'){
           this.$message.success("Saved successfully")
           this.dialogFormVisible = false
@@ -175,7 +175,7 @@ export default {
     },
     delBatch(){
       let ids = this.multipleSelection.map(v =>v.id) //[{}, {}, {}]=>[1,2,3]
-      this.request.post("/user/del/batch", ids).then(res =>{
+      this.request.delete("/user/del/batch", { data: ids }).then(res =>{
         if(res.code === '200'){
           this.$message.success("successfully deleted")
           this.load()

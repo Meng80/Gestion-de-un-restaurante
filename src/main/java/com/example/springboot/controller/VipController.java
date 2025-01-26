@@ -33,40 +33,40 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/vip")
         public class VipController {
 
-@Resource
+    @Resource
     private IVipService vipService;
 
-@PostMapping
+    @PutMapping
     public Result save(@RequestBody Vip vip){
        vipService.saveOrUpdate(vip);
           return Result.success();
         }
 
-@DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
        vipService.removeById(id);
           return Result.success();
         }
 
-@PostMapping("/del/batch")
-   public Result deleteBatch(@RequestBody List<Integer> ids) {
+    @DeleteMapping("/del/batch")
+    public Result deleteBatch(@RequestBody List<Integer> ids) {
        vipService.removeByIds(ids);
           return Result.success();
         }
 
-@GetMapping
-   public Result findALL(){
+    @GetMapping
+    public Result findALL(){
           return Result.success(vipService.list());
 
         }
 
-@GetMapping("/{id}")
+    @GetMapping("/{id}")
     public Result findOne(@PathVariable Integer id) {
         return Result.success(vipService.getById(id));
 
         }
 
-@GetMapping("/page")
+    @GetMapping("/page")
     public Result findPage(@RequestParam String name,
                            @RequestParam Integer pageNum,
                            @RequestParam Integer pageSize,
@@ -105,7 +105,6 @@ import org.springframework.web.multipart.MultipartFile;
         writer.flush(out, true);
         out.close();
         writer.close();
-
     }
 
     /**
@@ -139,10 +138,8 @@ import org.springframework.web.multipart.MultipartFile;
             queryWrapper.le("last_Visit", sixMonthsAgo);
             System.out.println("Querying VIPs who haven't visited in the last 6 months since: " + sixMonthsAgo.format(formatter));
         }
-
         List<Vip> vipList = vipService.list(queryWrapper);
         return Result.success(vipList);
     }
-
 }
 

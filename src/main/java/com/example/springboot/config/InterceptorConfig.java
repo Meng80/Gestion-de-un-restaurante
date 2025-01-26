@@ -12,7 +12,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/user/login","/user/register","/**/export","/**/import","/file/**");
+                .excludePathPatterns("/user/login","/user/register","/**/export","/**/import","/file/**",
+                        "/swagger-ui/**", "/v2/api-docs", "/swagger-resources/**", "/webjars/**","/api/auth/**",
+                        "/api/test/**", "/authenticate");
     }
 
     @Bean

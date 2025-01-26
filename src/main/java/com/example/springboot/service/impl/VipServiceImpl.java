@@ -13,5 +13,4 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class VipServiceImpl extends ServiceImpl<VipMapper, Vip> implements IVipService {
-
 }

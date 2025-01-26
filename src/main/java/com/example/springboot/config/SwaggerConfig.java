@@ -6,14 +6,16 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.oas.annotations.EnableOpenApi;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
+import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
-@EnableOpenApi
 public class SwaggerConfig {
 
     /**
@@ -29,14 +31,45 @@ public class SwaggerConfig {
     public Docket restApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("Standard Interfaces")
-                .apiInfo(apiInfo("Spring Boot中使用Swagger2构建RESTful APIs", "1.0"))
+                .apiInfo(apiInfo("Spring Boot use Swagger2 RESTful APIs", "1.0.0"))
                 .useDefaultResponseMessages(true)
                 .forCodeGeneration(false)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.springboot.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .securitySchemes(Arrays.asList(new ApiKey("Authorization", "Authorization", "header")))
+                .securityContexts(securityContexts());
     }
+
+
+    /**
+     * 安全上下文
+     */
+    private List<SecurityContext> securityContexts()
+    {
+        List<SecurityContext> securityContexts = new ArrayList<>();
+        securityContexts.add(
+                SecurityContext.builder()
+                        .securityReferences(defaultAuth())
+                        .build());
+        return securityContexts;
+    }
+
+    /**
+     * 默认的安全上引用
+     */
+    private List<SecurityReference> defaultAuth()
+    {
+        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        List<SecurityReference> securityReferences = new ArrayList<>();
+        securityReferences.add(new SecurityReference("Authorization", authorizationScopes));
+        return securityReferences;
+    }
+
+
 
     /**
      * Create basic information for the API.
@@ -46,11 +79,10 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo(String title, String version) {
         return new ApiInfoBuilder()
-                .title(title)
-                .description("For more information, visit: https://blog.csdn.net/xqnode")
-                .termsOfServiceUrl("https://blog.csdn.net/xqnode")
-                .contact(new Contact("xqnode", "https://blog.csdn.net/xqnode", "xiaqingweb@163.com"))
-                .version(version)
+                .title("Spring Boot with Swagger2 API Documentation")
+                .description("API documentation for Spring Boot application")
+                .version("1.0.0")
+                .contact(new Contact("Mengling Yang", "https://example.com", "me.yang@alumnos.upm.es"))
                 .build();
     }
 

@@ -18,7 +18,6 @@ public class CodeGenerator {
     public static void main(String[] args){
            generate();
     }
-
     private static void generate() {
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/yang?serverTimezone=GMT%2b2", "root", "123456")
                 .globalConfig(builder -> {
@@ -42,6 +41,5 @@ public class CodeGenerator {
                 })
 //                .templateEngine(new FreemarkerTemplateEngine())
                 .execute();
-
     }
 }

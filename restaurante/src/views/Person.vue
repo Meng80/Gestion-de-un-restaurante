@@ -57,10 +57,10 @@ export default {
   },
   methods: {
     async getUser() {
-      return (await this.request.get("/user/username/" + this.user.username)).data
+      return (await this.request.get("/user/" + this.user.username)).data
     },
     save() {
-      this.request.post("/user", this.form).then(res => {
+      this.request.put("/user", this.form).then(res => {
         if (res.code === '200') {
           this.$message.success("Saved successfully")
 

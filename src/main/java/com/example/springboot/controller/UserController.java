@@ -18,10 +18,13 @@ import com.example.springboot.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.net.URLEncoder;
@@ -30,6 +33,8 @@ import java.util.List;
 import static com.example.springboot.common.Constants.CODE_500;
 import static com.example.springboot.common.Constants.CODE_600;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -67,51 +72,58 @@ public class UserController {
         return Result.success(userService.register(userDTO));
     }
 
-    @PostMapping
+    @PutMapping
     public Result save(@RequestBody User user) {
-
         return Result.success(userService.saveOrUpdate(user));
     }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
-
         return Result.success(userService.removeById(id));
     }
 
-    @PostMapping("/del/batch")
+    @DeleteMapping("/del/batch")
     public Result deleteBatch(@RequestBody List<Integer> ids) {
-
-        return Result.success(userService.removeByIds(ids));
+        boolean success = userService.removeByIds(ids);
+        if (success) {
+            return Result.success(userService.removeByIds(ids));
+        } else {
+            return Result.error(CODE_600,"Delete failed");
+        }
     }
 
     @GetMapping
     public Result findALL() {
-
         return Result.success(userService.list());
     }
 
-    @GetMapping("/{id}")
-    public Result findOne(@PathVariable Integer id) {
-
-        return Result.success(userService.getById(id));
-    }
+//    @GetMapping("/{id}")
+//    public Result findOne(@PathVariable Integer id) {
+//
+//        return Result.success(userService.getById(id));
+//    }
 
     @GetMapping("/current")
     public Result findCurrentName() {
         try{
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+            System.out.println("Authorization Header: " + request.getHeader("Authorization"));
+            System.out.println("Token Header: " + request.getHeader("token"));
             User currentUser = TokenUtils.getCurrentUser();
             if (currentUser != null) {
+                System.out.println("Current User: " + currentUser.getUsername());
                 return Result.success(currentUser.getUsername());
             } else {
+                System.out.println("TokenUtils.getCurrentUser() returned null");
                 return Result.error(CODE_500, "Error");
             }
         } catch (Exception e) {
-            return Result.error(CODE_600, "Error");
+            e.printStackTrace();
+            return Result.error(CODE_600, "Error: " + e.getMessage());
         }
     }
 
-    @GetMapping("/username/{username}")
+    @GetMapping("/{username}")
     public Result findOne(@PathVariable String username) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username",username);
@@ -135,7 +147,6 @@ public class UserController {
         if (!"".equals(address)) {
             queryWrapper.like("address", address);
         }
-
         return Result.success(userService.page(new Page<>(pageNum, pageSize), queryWrapper));
     }
 
@@ -156,7 +167,6 @@ public class UserController {
         writer.flush(out, true);
         out.close();
         writer.close();
-
     }
 
     /**
@@ -179,7 +189,7 @@ public class UserController {
      * @param userPasswordDTO
      * @return
      */
-    @PostMapping("/password")
+    @PutMapping("/password")
     public Result password(@RequestBody UserPasswordDTO userPasswordDTO) {
         userService.updatePassword(userPasswordDTO);
         return Result.success();

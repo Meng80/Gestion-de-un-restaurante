@@ -108,20 +108,22 @@ export default {
       })
     },
     checkUserRole() {
-      this.request.get("/user/current").then(res => {
-        console.log(res);
-        if (res.data === 'admin') {
-          this.isAdmin = true;
-        } else {
-          this.isAdmin = false;
-        }
-      }).catch(error => {
-        console.error("get current User Id error", error);
-        this.isAdmin = false;
-      })
+      this.request.get("/user/current")
+          .then(res => {
+            if (res.data === "admin") {
+              this.isAdmin = true;
+            } else {
+              this.isAdmin = false;
+            }
+          })
+          .catch(error => {
+            console.error("Error fetching user role:", error);
+            this.$message.error("Failed to retrieve user role. Please try again.");
+            this.isAdmin = false;
+          });
     },
     changeEnable(row) {
-      this.request.post("/file/update", row).then(res => {
+      this.request.put("/file/update", row).then(res => {
         if (res.code === '200') {
           this.$message.success("Successful operation");
         } else {
@@ -147,7 +149,7 @@ export default {
     },
     delBatch() {
       let ids = this.multipleSelection.map(v => v.id)
-      this.request.post("/file/del/batch", ids).then(res => {
+      this.request.delete("/file/del/batch", { data: ids }).then(res => {
         if (res.code === '200') {
           this.$message.success("Bulk deletion succeeded")
           this.load()

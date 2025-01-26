@@ -36,7 +36,6 @@ public class TokenUtils {
         return  JWT.create().withAudience(userId)
                 .withExpiresAt(DateUtil.offsetHour(new Date(), 2))
                 .sign(Algorithm.HMAC256(sign));
-
     }
 
     /**
@@ -47,10 +46,19 @@ public class TokenUtils {
     public static User getCurrentUser() {
         try {
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-            String token = request.getHeader("token");
+            String token = request.getHeader("Authorization");
+            if (StrUtil.isNotBlank(token) && token.startsWith("Bearer ")) {
+                token = token.substring(7);
+            } else {
+                token = request.getHeader("token");
+            }
             if (StrUtil.isNotBlank(token)) {
                 String userId = JWT.decode(token).getAudience().get(0);
-                return staticUserService.getById(Integer.valueOf(userId));
+//                System.out.println("Token: " + token);
+//                System.out.println("UserId from Token: " + userId);
+                User user = staticUserService.getById(Integer.valueOf(userId));
+//                System.out.println("User Retrieved: " + user);
+                return user;
             }
         } catch (Exception e) {
             return null;

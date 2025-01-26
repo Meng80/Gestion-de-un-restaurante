@@ -32,7 +32,7 @@ import java.util.List;
 public class FileController {
 
     @Value("${files.upload.path}")
-    private String fileUploadPath;
+    public String fileUploadPath;
 
     @Resource
     private FileMapper fileMapper;
@@ -96,7 +96,6 @@ public class FileController {
         os.write(FileUtil.readBytes(uploadFile));
         os.flush();
         os.close();
-
     }
 
     /**
@@ -111,7 +110,7 @@ public class FileController {
         return filesList.size() == 0 ? null : filesList.get(0);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public Result update(@RequestBody Files files){
         return Result.success(fileMapper.updateById(files));
     }
@@ -124,7 +123,7 @@ public class FileController {
         return Result.success();
     }
 
-    @PostMapping("/del/batch")
+    @DeleteMapping("/del/batch")
     public Result deleteBatch(@RequestBody List<Integer> ids) {
         //select * from sys_file when id in (id, id, id...)
         QueryWrapper<Files> queryWrapper = new QueryWrapper<>();

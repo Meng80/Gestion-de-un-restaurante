@@ -25,12 +25,12 @@ import com.example.springboot.entity.Role;
  */
 @RestController
 @RequestMapping("/role")
-        public class RoleController {
+public class RoleController {
     
     @Resource
     private IRoleService roleService;
 
-    @PostMapping
+    @PutMapping
     public Result save(@RequestBody Role role){
        roleService.saveOrUpdate(role);
           return Result.success();
@@ -42,7 +42,7 @@ import com.example.springboot.entity.Role;
           return Result.success();
         }
 
-   @PostMapping("/del/batch")
+   @DeleteMapping("/del/batch")
    public Result deleteBatch(@RequestBody List<Integer> ids) {
        roleService.removeByIds(ids);
           return Result.success();
@@ -85,7 +85,5 @@ import com.example.springboot.entity.Role;
     public Result getRoleMenu(@PathVariable Integer roleId) {
         return Result.success( roleService.getRoleMenu(roleId));
     }
-
-
     }
 

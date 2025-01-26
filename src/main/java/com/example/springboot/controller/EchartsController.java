@@ -6,7 +6,7 @@ import cn.hutool.core.date.Quarter;
 import com.example.springboot.common.Result;
 import com.example.springboot.entity.Vip;
 import com.example.springboot.service.IVipService;
-import com.example.springboot.service.UserService;
+import com.example.springboot.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +21,10 @@ public class EchartsController {
 
     @Autowired
     private IVipService vipService;
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @Autowired
-    public EchartsController(IVipService vipService, UserService userService) {
+    public EchartsController(IVipService vipService, UserServiceImpl userService) {
         this.vipService = vipService;
         this.userService = userService;
     }
@@ -57,8 +57,7 @@ public class EchartsController {
                 case Q3: q3 += 1; break;
                 case Q4: q4 += 1; break;
                 default: break;
-
-        }
+            }
         }
         return Result.success(CollUtil.newArrayList(q1, q2, q3, q4));
 

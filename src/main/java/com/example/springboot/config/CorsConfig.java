@@ -19,6 +19,7 @@ public class CorsConfig {
         corsConfiguration.addAllowedOrigin("http://localhost:8081");
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
+        corsConfiguration.addExposedHeader("Authorization");
         corsConfiguration.setMaxAge(MAX_AGE);
         source.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(source);

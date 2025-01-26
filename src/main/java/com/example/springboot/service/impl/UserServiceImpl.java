@@ -2,7 +2,9 @@ package com.example.springboot.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.log.Log;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import com.example.springboot.common.Constants;
 import com.example.springboot.controller.dto.UserDTO;
 import com.example.springboot.controller.dto.UserPasswordDTO;
@@ -54,8 +56,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             BeanUtil.copyProperties(one, userDTO, true);
             String token = TokenUtils.genToken(one.getId().toString(), one.getPassword());
             userDTO.setToken(token);
-
-            String role = one.getRole(); //ROLE_ADMIN
+            String role = one.getRole();
             List<Menu> roleMenus = getRoleMenus(role);
             userDTO.setMenus(roleMenus);
             return userDTO;
@@ -83,18 +84,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (update < 1) {
             throw new ServiceException(Constants.CODE_600, "Password error");
         }
-
     }
 
     private User getUserInfo(UserDTO userDTO) {
-
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username", userDTO.getUsername());
         queryWrapper.eq("password", userDTO.getPassword());
         User one;
         try {
-            one = getOne(queryWrapper);//busca la informacion de usuario en BBDD
-
+            one = this.getOne(queryWrapper);//busca la informacion de usuario en BBDD
         } catch (Exception e) {
             LOG.error(e);
             throw new ServiceException(Constants.CODE_500, "Error System");
@@ -107,14 +105,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * @param roleFlag
      * @return
      */
-    private List<Menu> getRoleMenus(String roleFlag) {
-
+    List<Menu> getRoleMenus(String roleFlag) {
         Integer roleId = roleMapper.selectByFlag(roleFlag);
         List<Integer> menuIds = roleMenuMapper.selectByRoleId(roleId);
-
         List<Menu> menus = menuService.findMenus("");
         List<Menu> roleMenus = new ArrayList<>();
-
         for (Menu menu : menus) {
             if(menuIds.contains(menu.getId())) {
                 roleMenus.add(menu);

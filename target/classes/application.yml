@@ -25,3 +25,11 @@ files:
   upload:
     path: C:/Users/adaya/Desktop/TFG/TFG2023/files/
 
+  spring:
+    resources:
+      static-locations: classpath:/META-INF/resources/, classpath:/META-INF/resources/webjars/
+
+
+      springfox:
+        documentation:
+          auto-startup: false
