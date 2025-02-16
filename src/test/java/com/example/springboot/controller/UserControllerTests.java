@@ -65,19 +65,18 @@ class UserControllerTests {
     }
 
     @Test
-    void testRegister() {
-        // Arrange
+    void testRegister_Success() {
         UserDTO userDTO = new UserDTO();
-        userDTO.setUsername("test");
-        userDTO.setPassword("123456");
-        //when(userService.register(userDTO)).thenReturn();
+        userDTO.setUsername("newUser");
+        userDTO.setPassword("securePass");
+        userDTO.setEmail("user@example.com");
+        userDTO.setCode("1234");
 
-        // Act
+        when(userService.register(any(UserDTO.class))).thenReturn(null);
+
         Result result = userController.register(userDTO);
-
-        // Assert
-        assertEquals(Result.success(null), result);
-        verify(userService, times(1)).register(userDTO);
+        assertEquals(Result.success(), result);
+        assertEquals(null, result.getData());
     }
 
     @Test

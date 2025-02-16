@@ -40,7 +40,6 @@ class RoleServiceImplTests {
         Integer roleId = 1;
         List<Integer> menuIds = Arrays.asList(1, 2, 3);
 
-        // Mocking Menu service behavior
         Menu menu1 = new Menu();
         menu1.setPid(null); // top-level menu
         when(menuService.getById(1)).thenReturn(menu1);
@@ -76,10 +75,9 @@ class RoleServiceImplTests {
 
     @Test
     void testGetRoleMenu_withValidRoleId() {
+        // Mocking roleMenuMapper behavior
         Integer roleId = 1;
         List<Integer> expectedMenuIds = Arrays.asList(1, 2, 3);
-
-        // Mocking roleMenuMapper behavior
         when(roleMenuMapper.selectByRoleId(roleId)).thenReturn(expectedMenuIds);
 
         // Call the service method

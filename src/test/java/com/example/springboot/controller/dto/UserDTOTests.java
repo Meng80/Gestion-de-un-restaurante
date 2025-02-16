@@ -68,7 +68,7 @@ class UserDTOTests {
         userDTO.setPassword("password123");
 
         // Test the toString method
-        String expectedToString = "UserDTO(username=john_doe, password=password123, nickname=null, avatarUrl=null, token=null, role=null, menus=null)";
+        String expectedToString = "UserDTO(username=john_doe, password=password123, email=null, code=null, nickname=null, avatarUrl=null, token=null, role=null, menus=null)";
         assertEquals(expectedToString, userDTO.toString());
     }
 }
