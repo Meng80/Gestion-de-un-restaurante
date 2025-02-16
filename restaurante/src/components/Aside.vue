@@ -44,6 +44,13 @@ export default {
     logoTextShow: Boolean,
   },
   data() {
+
+    let storedMenus = localStorage.getItem("menus");
+    let menus = storedMenus ? JSON.parse(storedMenus) : [];
+    let opens = menus.map(v => v.id + '');
+
+    // ✅ 调试信息
+    console.log("Menus in Aside.vue (from localStorage):", menus);
     return {
       menus: localStorage.getItem("menus") ? JSON.parse(localStorage.getItem("menus")) : [],
       opens: localStorage.getItem("menus") ? JSON.parse(localStorage.getItem("menus")).map(v => v.id + '') : []

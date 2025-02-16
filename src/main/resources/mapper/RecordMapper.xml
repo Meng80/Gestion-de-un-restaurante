@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.RecordMapper">
+
+    <select id="pageCC" resultType="com.example.springboot.entity.RecordRes">
+        select sr.*, sp.name productName, sc.name categoryName,
+               (select su.username from sys_user su where su.id = sr.user_id) AS userName
+        from sys_record sr, sys_product sp, sys_category sc
+        ${ew.customSqlSegment}
+    </select>
+
+</mapper>

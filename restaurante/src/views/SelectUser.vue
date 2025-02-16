@@ -8,51 +8,16 @@
       <el-button class="ml-5" type="warning" @click="reset"> reset </el-button>
     </div>
 
-    <div style="padding: 10px 0">
-      <el-button type="primary" @click = "handleAdd"> add <i class="el-icon-circle-plus-outline"></i></el-button>
-      <el-popconfirm
-          class="ml-5"
-          confirm-button-text='ok'
-          cancel-button-text='no'
-          icon="el-icon-info"
-          icon-color="red"
-          title="Are you sure you want to delete the content?"
-          @confirm="delBatch"
-      >
-        <el-button type="danger" slot="reference" > delete <i class="el-icon-remove-outline"></i></el-button>
-      </el-popconfirm>
-      <el-upload action="http://localhost:9090/user/import" :show-file-list="false" accept=".xlsx" :on-success="handleExcelImportSuccess" style="display: inline-block">
-        <el-button type="primary" class="ml-5"> import <i class="el-icon-bottom"></i></el-button>
-      </el-upload>
-      <el-button type="primary" @click="exp" class="ml-5"> export <i class="el-icon-top"></i></el-button>
-    </div>
-
-
-    <el-table :data="tableData" border stripe :header-cell-class-name="'headerBg'"  @selection-change="handleSelectionChange">
+    <el-table :data="tableData" border stripe :header-cell-class-name="'headerBg'"  @selection-change="handleSelectionChange"
+              highlight-current-row @current-change="handleSelectionChange">
       <el-table-column type="selection" width="55"> </el-table-column>
       <el-table-column prop="id" label="id" width="80"></el-table-column>
-      <el-table-column prop="username" label="name" width="120"></el-table-column>
-      <el-table-column prop="role" label="role" width="120"></el-table-column>
-      <el-table-column prop="nickname" label="nickname" width="100"></el-table-column>
-      <el-table-column prop="email" label="email" width="120"></el-table-column>
-      <el-table-column prop="phone" label="phone" width="120"></el-table-column>
+      <el-table-column prop="username" label="name" width="150"></el-table-column>
+      <el-table-column prop="role" label="role" width="150"></el-table-column>
+      <el-table-column prop="nickname" label="nickname" width="150"></el-table-column>
+      <el-table-column prop="email" label="email" width="150"></el-table-column>
+      <el-table-column prop="phone" label="phone" width="150"></el-table-column>
       <el-table-column prop="address" label="address"></el-table-column>
-      <el-table-column label="operate">
-        <template slot-scope="scope">
-          <el-button type="success" @click="handleEdit(scope.row)"> edit <i class="el-icon-edit"></i></el-button>
-          <el-popconfirm
-              class="ml-5"
-              confirm-button-text='ok'
-              cancel-button-text='no'
-              icon="el-icon-info"
-              icon-color="red"
-              title="Are you sure you want to delete user?"
-              @confirm="del(scope.row.id)"
-          >
-            <el-button type="danger" slot="reference"> delete <i class="el-icon-remove-outline"></i></el-button>
-          </el-popconfirm>
-        </template>
-      </el-table-column>
     </el-table>
     <div style="padding: 10px 0">
       <el-pagination
@@ -100,7 +65,7 @@
 <script>
 
 export default {
-  name: "User",
+  name: "SelectUser",
   data(){
     return {
       tableData: [],
@@ -170,8 +135,7 @@ export default {
       })
     },
     handleSelectionChange(val){
-      console.log(val)
-      this.multipleSelection = val
+      this.$emit("doSelectUser",val)
     },
     delBatch(){
       let ids = this.multipleSelection.map(v =>v.id) //[{}, {}, {}]=>[1,2,3]

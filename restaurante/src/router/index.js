@@ -20,6 +20,9 @@ const routes = [
       { path: 'file', name: 'file', component:() => import('../views/File.vue')},
       { path: 'person', name: 'person', component:() => import('../views/Person.vue')},
       { path: 'vip', name: 'vip', component:() => import('../views/Vip.vue')},
+      { path: 'category', name: 'category', component:() => import('../views/Category.vue')},
+      { path: 'product', name: 'product', component:() => import('../views/Product.vue')},
+      { path: 'record', name: 'record', component:() => import('../views/Record.vue')},
       { path: 'password', name: 'password', component:() => import('../views/Password.vue')},
     ]
   },

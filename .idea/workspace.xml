@@ -5,33 +5,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/common/ResultTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/common/RoleEnumTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/config/interceptor/JwtInterceptorTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/EchartsControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/FileControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/MenuControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/RoleControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/UserControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/VipControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/dto/UserDTOTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/dto/UserPasswordDTOTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/DictTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/FilesTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/MenuTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/RoleMenuTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/RoleTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/UserTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/VipTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/exception/GlobalExceptionHandlerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/exception/ServiceExceptionTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/MenuServiceImplTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/RoleServiceImplTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/UserServiceImplTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/VipServiceImplTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/utils/CodeGeneratorTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/utils/TokenUtilsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/SpringbootApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/SpringbootApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Category.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Product.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Record.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/src/views/SelectUser.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/RecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Record.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/RecordRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/RecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/RecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/CategoryControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/ProductControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/RecordControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/CategoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/ProductTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/RecordResTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/entity/RecordTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/CategoryServiceImplTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/ProductServiceImplTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/RecordServiceImplTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/components/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/components/Aside.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/views/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/SpringbootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/SpringbootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/VipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/utils/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/utils/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/config/interceptor/JwtInterceptorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/config/interceptor/JwtInterceptorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/UserControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/dto/UserDTOTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/dto/UserDTOTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/RoleServiceImplTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/RoleServiceImplTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/UserServiceImplTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/UserServiceImplTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/SpringbootApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/SpringbootApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/config/InterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/config/InterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/dto/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/utils/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/utils/CodeGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +88,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -116,7 +163,7 @@
       <recent name="com.example.springboot" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="JUnit.All in springboot">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
       <module name="springboot" />
@@ -130,19 +177,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in springboot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springboot" />
       <option name="PACKAGE_NAME" value="" />
@@ -151,39 +185,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileControllerTests.testDownload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JwtInterceptorTests.testPreHandle_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springboot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.springboot.controller.*" />
+          <option name="PATTERN" value="com.example.springboot.config.interceptor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.springboot.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.springboot.controller.FileControllerTests" />
-      <option name="METHOD_NAME" value="testDownload" />
+      <option name="PACKAGE_NAME" value="com.example.springboot.config.interceptor" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot.config.interceptor.JwtInterceptorTests" />
+      <option name="METHOD_NAME" value="testPreHandle_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileControllerTests.testDownload_fileNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.springboot.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.springboot.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.springboot.controller.FileControllerTests" />
-      <option name="METHOD_NAME" value="testDownload_fileNotFound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceImplTests.testLogin_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoleServiceImplTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springboot" />
       <extension name="coverage">
         <pattern>
@@ -192,14 +210,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.springboot.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.example.springboot.service.impl.UserServiceImplTests" />
-      <option name="METHOD_NAME" value="testLogin_Success" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot.service.impl.RoleServiceImplTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTests.testRegister_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceImplTests2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springboot" />
       <extension name="coverage">
         <pattern>
@@ -208,9 +225,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.springboot.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.example.springboot.service.impl.UserServiceImplTests" />
-      <option name="METHOD_NAME" value="testRegister_Success" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot.service.impl.UserServiceImplTests2" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.example.springboot.config.interceptor in springboot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.springboot.config.interceptor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.springboot.config.interceptor" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -237,20 +267,20 @@
     <list>
       <item itemvalue="Application.CodeGenerator" />
       <item itemvalue="JUnit.All in springboot" />
-      <item itemvalue="JUnit.UserServiceImplTests.testLogin_Success" />
-      <item itemvalue="JUnit.UserServiceImplTests.testRegister_Success" />
-      <item itemvalue="JUnit.FileControllerTests.testDownload" />
-      <item itemvalue="JUnit.FileControllerTests.testDownload_fileNotFound" />
+      <item itemvalue="JUnit.JwtInterceptorTests.testPreHandle_Success" />
+      <item itemvalue="JUnit.com.example.springboot.config.interceptor in springboot" />
+      <item itemvalue="JUnit.UserServiceImplTests2" />
+      <item itemvalue="JUnit.RoleServiceImplTests" />
       <item itemvalue="npm.serve" />
       <item itemvalue="Spring Boot.SpringbootApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in springboot" />
-        <item itemvalue="JUnit.FileControllerTests.testDownload_fileNotFound" />
-        <item itemvalue="JUnit.FileControllerTests.testDownload" />
-        <item itemvalue="JUnit.UserServiceImplTests.testLogin_Success" />
-        <item itemvalue="JUnit.UserServiceImplTests.testRegister_Success" />
+        <item itemvalue="JUnit.RoleServiceImplTests" />
+        <item itemvalue="JUnit.UserServiceImplTests2" />
+        <item itemvalue="JUnit.com.example.springboot.config.interceptor in springboot" />
+        <item itemvalue="JUnit.JwtInterceptorTests.testPreHandle_Success" />
       </list>
     </recent_temporary>
   </component>
@@ -377,7 +407,15 @@
       <workItem from="1734210645151" duration="14909000" />
       <workItem from="1734476733267" duration="9780000" />
       <workItem from="1736116538776" duration="52042000" />
-      <workItem from="1737916509444" duration="627000" />
+      <workItem from="1737916509444" duration="7609000" />
+      <workItem from="1737960224539" duration="1240000" />
+      <workItem from="1738056624556" duration="12562000" />
+      <workItem from="1738187645830" duration="2423000" />
+      <workItem from="1738444126195" duration="10094000" />
+      <workItem from="1738516217308" duration="9894000" />
+      <workItem from="1738624145415" duration="1570000" />
+      <workItem from="1738792043729" duration="20700000" />
+      <workItem from="1738928726045" duration="38171000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -477,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737917102576</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added Unit Test">
+      <created>1737917237273</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1737917237273</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +561,8 @@
     <MESSAGE value="fixed home.vue added number of VIP customers and employees" />
     <MESSAGE value="fixed last visit with calendar" />
     <MESSAGE value="fixed REST API" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed REST API" />
+    <MESSAGE value="added Unit Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Unit Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -538,12 +584,15 @@
     <SUITE FILE_PATH="coverage/springboot$SpringbootApplicationTests.ic" NAME="SpringbootApplicationTests Coverage Results" MODIFIED="1736462862632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.springboot.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/springboot$RoleServiceImplTests.ic" NAME="RoleServiceImplTests Coverage Results" MODIFIED="1736688861846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/springboot$RoleServiceImplTests.ic" NAME="RoleServiceImplTests Coverage Results" MODIFIED="1739142957347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.springboot.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/springboot$com_example_springboot_config_interceptor_in_springboot.ic" NAME="com.example.springboot.config.interceptor in springboot Coverage Results" MODIFIED="1739058053062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.springboot.config.interceptor.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/springboot$FileControllerTests.ic" NAME="FileControllerTests Coverage Results" MODIFIED="1736701917695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.springboot.controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/springboot$All_in_springboot.ic" NAME="All in springboot Coverage Results" MODIFIED="1736789872056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/springboot$All_in_springboot.ic" NAME="All in springboot Coverage Results" MODIFIED="1739190503551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

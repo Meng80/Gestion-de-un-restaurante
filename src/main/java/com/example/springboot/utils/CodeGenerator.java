@@ -36,7 +36,7 @@ public class CodeGenerator {
 //                    builder.mapperBuilder().enableMapperAnnotation().build();
                     builder.controllerBuilder().enableHyphenStyle()
                             .enableRestStyle();
-                    builder.addInclude("sys_vip")
+                    builder.addInclude("sys_product")
                             .addTablePrefix("t_", "sys_");
                 })
 //                .templateEngine(new FreemarkerTemplateEngine())

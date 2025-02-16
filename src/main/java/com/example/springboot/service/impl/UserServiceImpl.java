@@ -20,103 +20,57 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.springboot.utils.TokenUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-/**
- *
- * @author ada
- * @since 2023-05-23
- */
 @Slf4j
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
-
+    @Autowired JavaMailSender javaMailSender;
+    @Value("${spring.mail.username}")
+    private String from;
     private static final Log LOG = Log.get();
-
-    @Resource
-    private UserMapper userMapper;
-
-    @Resource
-    private RoleMapper roleMapper;
-
-    @Resource
-    private RoleMenuMapper roleMenuMapper;
-
-    @Resource
-    private IMenuService menuService;
-
+    @Resource private UserMapper userMapper;
+    @Resource private RoleMapper roleMapper;
+    @Resource private RoleMenuMapper roleMenuMapper;
+    @Resource private IMenuService menuService;
     @Override
     public UserDTO login(UserDTO userDTO) {
-        User one = getUserInfo(userDTO);
-        if (one != null) {
-            BeanUtil.copyProperties(one, userDTO, true);
-            String token = TokenUtils.genToken(one.getId().toString(), one.getPassword());
-            userDTO.setToken(token);
-            String role = one.getRole();
-            List<Menu> roleMenus = getRoleMenus(role);
-            userDTO.setMenus(roleMenus);
-            return userDTO;
-        } else {
-            throw new ServiceException(Constants.CODE_600, "Error username or password");
-        }
+        User one = getUserInfo(userDTO);if (one != null) {
+            BeanUtil.copyProperties(one, userDTO, true);String token = TokenUtils.genToken(one.getId().toString(), one.getPassword());userDTO.setToken(token);String role = one.getRole();List<Menu> roleMenus = getRoleMenus(role);userDTO.setMenus(roleMenus);return userDTO;
+        } else {throw new ServiceException(Constants.CODE_600, "Error username or password"); }
     }
-
     @Override
     public User register(UserDTO userDTO) {
-        User one = getUserInfo(userDTO);
-        if(one == null){
-            one = new User();
-            BeanUtil.copyProperties(userDTO, one,true);
-            save(one);
-        }else{
-            throw new ServiceException(Constants.CODE_600, "Ya exist user");
-        }
-        return one;
+        User one = getUserInfo(userDTO);if(one == null){one = new User();BeanUtil.copyProperties(userDTO, one,true);save(one);
+        }else{throw new ServiceException(Constants.CODE_600, "Ya exist user"); }return one;
     }
-
+    @Override
+    public void sendEmailCode(String email) {
+        String code = String.valueOf((int)((Math.random() * 9 + 1) * 1000));log.info("Generated verification code: {}", code);SimpleMailMessage message = new SimpleMailMessage();message.setFrom(from);message.setTo(email);message.setSubject("Registration Verification Code");message.setText("Your verification code is: " + code + ". It is valid for 5 minutes.");
+        try {javaMailSender.send(message);log.info("Verification code sent to email: {}", email);
+        } catch (Exception e) {log.error("Error sending email: {}", e.getMessage());throw new ServiceException(Constants.CODE_500, "Failed to send verification code"); }
+    }
     @Override
     public void updatePassword(UserPasswordDTO userPasswordDTO) {
         int update = userMapper.updatePassword(userPasswordDTO);
-        if (update < 1) {
-            throw new ServiceException(Constants.CODE_600, "Password error");
-        }
+        if (update < 1) {throw new ServiceException(Constants.CODE_600, "Password error"); }
     }
-
     private User getUserInfo(UserDTO userDTO) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("username", userDTO.getUsername());
-        queryWrapper.eq("password", userDTO.getPassword());
-        User one;
-        try {
-            one = this.getOne(queryWrapper);//busca la informacion de usuario en BBDD
-        } catch (Exception e) {
-            LOG.error(e);
-            throw new ServiceException(Constants.CODE_500, "Error System");
-        }
-        return one;
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();queryWrapper.eq("username", userDTO.getUsername());queryWrapper.eq("password", userDTO.getPassword());User one;
+        try {one = this.getOne(queryWrapper); } catch (Exception e) {LOG.error(e);throw new ServiceException(Constants.CODE_500, "Error System"); }return one;
     }
-
-    /**
-     * Obtener la lista de elementos del menú del rol actual
-     * @param roleFlag
-     * @return
-     */
     List<Menu> getRoleMenus(String roleFlag) {
-        Integer roleId = roleMapper.selectByFlag(roleFlag);
-        List<Integer> menuIds = roleMenuMapper.selectByRoleId(roleId);
-        List<Menu> menus = menuService.findMenus("");
-        List<Menu> roleMenus = new ArrayList<>();
-        for (Menu menu : menus) {
-            if(menuIds.contains(menu.getId())) {
-                roleMenus.add(menu);
-            }
-            List<Menu> children = menu.getChildren();
-            children.removeIf(child -> !menuIds.contains(child.getId()));
-        }
-        return roleMenus;
+        Integer roleId = roleMapper.selectByFlag(roleFlag);List<Integer> menuIds = roleMenuMapper.selectByRoleId(roleId);List<Menu> menus = menuService.findMenus("");List<Menu> roleMenus = new ArrayList<>();
+        for (Menu menu : menus) {if(menuIds.contains(menu.getId())) { roleMenus.add(menu);
+            }List<Menu> children = menu.getChildren();children.removeIf(child -> !menuIds.contains(child.getId()));
+        }return roleMenus;
     }
 }

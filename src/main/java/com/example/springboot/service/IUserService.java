@@ -20,4 +20,6 @@ public interface IUserService extends IService<User> {
     User register(UserDTO userDTO);
 
     void updatePassword(UserPasswordDTO userPasswordDTO);
+
+    void sendEmailCode(String email);
 }

@@ -31,7 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @RestController
 @RequestMapping("/vip")
-        public class VipController {
+public class VipController {
 
     @Resource
     private IVipService vipService;

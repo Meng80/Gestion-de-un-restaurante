@@ -12,6 +12,13 @@
         <el-form-item prop="confirmPassword">
           <el-input placeholder="Please confirm your password" size="medium" prefix-icon="el-icon-lock" show-password v-model="user.confirmPassword"></el-input>
         </el-form-item>
+        <el-form-item prop="email">
+          <el-input placeholder="Please enter your email" size="medium" prefix-icon="el-icon-message" show-password v-model="user.email"></el-input>
+        </el-form-item>
+        <el-form-item prop="code">
+          <el-input placeholder="Enter your code" size="medium" prefix-icon="el-icon-lock" style="width: 195px" show-password v-model="user.code"></el-input>
+          <el-button type="primary" size="small" class="ml-5" @click="getEmailCode" >Get your Code</el-button>
+        </el-form-item>
         <el-form-item style="margin: 5px 0; text-align: right">
           <el-button type="primary" size="small"  autocomplete="off" @click="register">register</el-button>
           <el-button type="warning" size="small"  autocomplete="off" @click="$router.push('/login')">Return</el-button>
@@ -39,8 +46,16 @@ export default {
         ],
         confirmPassword: [
           { required: true, message: 'Please confirm your password', trigger: 'blur' },
-          { min: 1, max: 20, message: '3 to 5 characters in length', trigger: 'blur' },
+          { min: 1, max: 20, message: '1 to 20 characters in length', trigger: 'blur' },
           {validator: this.validateConfirmPassword, trigger: 'blur'}
+        ],
+        email: [
+          { required: true, message: 'Please enter your email', trigger: 'blur' },
+          { min: 1, max: 20, message: '1 to 20 characters in length', trigger: 'blur' },
+        ],
+        code: [
+          { required: true, message: 'Please enter your code', trigger: 'blur' },
+          { min: 1, max: 4, message: '4 characters in length', trigger: 'blur' },
         ],
       }
     }
@@ -65,12 +80,11 @@ export default {
     },
 
     validatePassword(rule, value, callback){
-      if(!value) {
+      if (!value) {
         return callback(new Error('Password cannot be empty'));
       }
-      const regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-      if(!regExp.test(value)) {
-        callback(new Error('uppercase,lowercase,number,and special character'));
+      if (value.length < 6) {
+        callback(new Error('Password must be at least 6 characters long'));
       } else {
         callback();
       }
@@ -82,6 +96,24 @@ export default {
       } else {
         callback ();
       }
+    },
+
+    getEmailCode(){
+      if(!this.user.email){
+        this.$message.warning("Please enter your email");
+      }
+      if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.user.email)){
+        this.$message.warning("Please enter email right");
+      }
+      this.request.post("/user/sendCode/" + this.user.email).then(res => {
+        if(res.code === '200') {
+          this.$message.success("send success");
+        }else {
+          this.$message.error(res.msg);
+        }
+
+      })
+
     },
   }
 }
