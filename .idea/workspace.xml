@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added dishCategory and others">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_4_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_4_7.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/restaurante/src/views/Dish.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurante/src/views/DishCategory.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/restaurante/src/views/Order.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/annotation/AutoFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/aspect/AutoFillAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/AutoFillConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/BaseContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/MessageConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/OperationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/StatusConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/DishCategoryController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/DishController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/DishCategoryDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/DishDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/GoodsSalesDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersCancelDTO.java" afterDir="false" />
@@ -31,22 +18,16 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersRejectionDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersSubmitDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Dish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/DishCategory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/OrderDetail.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Orders.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/exception/BaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/exception/DeletionNotAllowedException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/exception/OrderBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/DishCategoryMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/DishMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderDetailMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/ShoppingCartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IDishCategoryService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IDishService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/DishCategoryServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/DishServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/DishVO.java" afterDir="false" />
@@ -56,48 +37,13 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderStatisticsVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderSubmitVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/DishCategoryMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/DishMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderDetailMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoppingCartMapper.xml.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3eb88654-c493-47e4-b614-1d4c107969cc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3eb88654-c493-47e4-b614-1d4c107969cc/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3eb88654-c493-47e4-b614-1d4c107969cc/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurante/src/views/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/interceptor/JwtInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/RecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/utils/TokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/utils/TokenUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/config/interceptor/JwtInterceptorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/config/interceptor/JwtInterceptorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/CategoryControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/CategoryControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/ProductControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/ProductControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/RecordControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/RecordControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/exception/GlobalExceptionHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/exception/GlobalExceptionHandlerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/MenuServiceImplTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/MenuServiceImplTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/ProductServiceImplTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/ProductServiceImplTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/UserServiceImplTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/service/impl/UserServiceImplTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springboot/utils/TokenUtilsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/utils/TokenUtilsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/config/interceptor/JwtInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/config/interceptor/JwtInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/RoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/utils/TokenUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/utils/TokenUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,7 +425,7 @@
       <workItem from="1770674784251" duration="25023000" />
       <workItem from="1773423534282" duration="64000" />
       <workItem from="1773423676335" duration="63768000" />
-      <workItem from="1773931040406" duration="87284000" />
+      <workItem from="1773931040406" duration="87986000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -600,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1739744746928</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added dishCategory and others">
+      <created>1774821067048</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1774821067048</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

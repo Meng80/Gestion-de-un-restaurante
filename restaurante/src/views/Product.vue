@@ -266,21 +266,21 @@ export default {
         return;
       }
       this.stockInFormVisible = true;
+      this.form1.action = "2"
       this.form1.productname = this.multipleSelection.name
       this.form1.product = this.multipleSelection.id
-      this.form1.userId = this.user.id
-      this.form1.action = "2"
+      //this.form1.userId = this.user.id
     },
     selectUser() {
       this.innerVisible = true;
     },
     doSelectUser(val) {
-      console.log(val)
-      this.tempUser = val
+      this.tempUser = val[0];
     },
     confirmUser() {
       this.form1.username = this.tempUser.username
       this.form1.userId = this.tempUser.id
+      //this.form1.action = this.tempUser.action
       this.innerVisible = false
     },
     handleEdit(row) {
