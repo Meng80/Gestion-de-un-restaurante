@@ -18,6 +18,5 @@ public class GlobalExceptionHandlerTests {
 
         // Assert
         assertEquals("400", result.getCode());
-        //assertEquals("Service exception occurred", result.getMessage());
     }
 }

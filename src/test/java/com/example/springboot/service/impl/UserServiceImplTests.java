@@ -103,7 +103,6 @@ public class UserServiceImplTests {
         // Assert
         assertNotNull(result);
         assertEquals("newuser", result.getUsername());
-        //verify(userMapper, times(1)).save(any());  // Ensure save was called
     }
 
     @Test

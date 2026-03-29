@@ -64,8 +64,6 @@ class TokenUtilsTests {
 
         User currentUser = TokenUtils.getCurrentUser();
         assertNull(currentUser);
-        //assertEquals(mockUser.getId(), currentUser.getId());
-        //assertEquals(mockUser.getName(), currentUser.getName());
     }
 
     @Test

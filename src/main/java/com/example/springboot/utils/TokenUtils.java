@@ -54,10 +54,7 @@ public class TokenUtils {
             }
             if (StrUtil.isNotBlank(token)) {
                 String userId = JWT.decode(token).getAudience().get(0);
-//                System.out.println("Token: " + token);
-//                System.out.println("UserId from Token: " + userId);
                 User user = staticUserService.getById(Integer.valueOf(userId));
-//                System.out.println("User Retrieved: " + user);
                 return user;
             }
         } catch (Exception e) {

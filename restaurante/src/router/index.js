@@ -24,6 +24,9 @@ const routes = [
       { path: 'product', name: 'product', component:() => import('../views/Product.vue')},
       { path: 'record', name: 'record', component:() => import('../views/Record.vue')},
       { path: 'password', name: 'password', component:() => import('../views/Password.vue')},
+      { path: 'dishCategory', name: 'dishCategory', component:() => import('../views/DishCategory.vue')},
+      { path: 'dish', name: 'dish', component:() => import('../views/Dish.vue')},
+      { path: 'order', name: 'order', component:() => import('../views/Order.vue')},
     ]
   },
   {

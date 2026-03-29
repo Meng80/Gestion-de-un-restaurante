@@ -46,8 +46,6 @@ public class ProductControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         verify(productService, times(1)).saveOrUpdate(any(Product.class));
     }
 
@@ -61,8 +59,6 @@ public class ProductControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         verify(productService, times(1)).removeById(1);
     }
 
@@ -77,8 +73,6 @@ public class ProductControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         verify(productService, times(1)).removeByIds(ids);
     }
 
@@ -93,10 +87,7 @@ public class ProductControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         assertEquals(1, ((List<?>) result.getData()).size());
-        //assertEquals("Test Product", ((List<?>) result.getData()).get(0).getName());
         verify(productService, times(1)).list();
     }
 
@@ -110,8 +101,6 @@ public class ProductControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         assertEquals("Test Product", ((Product) result.getData()).getName());
         verify(productService, times(1)).getById(1);
     }
@@ -127,10 +116,7 @@ public class ProductControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         assertEquals(0, ((Page<?>) result.getData()).getRecords().size());
-        //assertEquals("Test Product", ((Product) ((Page<?>) result.getData()).getRecords().get(0)).getName());
         verify(productService, times(1)).page(any(), any());
     }
 }

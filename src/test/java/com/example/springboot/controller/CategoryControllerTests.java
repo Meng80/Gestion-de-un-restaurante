@@ -54,7 +54,6 @@ public class CategoryControllerTests {
         // Assert the response result
         assertNotNull(result);
         assertEquals(result.getCode(), result.getCode());
-        //assertEquals("success", result.getMessage());
 
         // Verify the service method was called
         verify(categoryService, times(1)).saveOrUpdate(category);
@@ -72,7 +71,6 @@ public class CategoryControllerTests {
         // Assert the response result
         assertNotNull(result);
         assertEquals(result.getCode(), result.getCode());
-        //assertEquals("success", result.getMessage());
 
         // Verify the service method was called
         verify(categoryService, times(1)).removeById(categoryId);
@@ -90,7 +88,6 @@ public class CategoryControllerTests {
         // Assert the response result
         assertNotNull(result);
         assertEquals(result.getCode(), result.getCode());
-        //assertEquals("success", result.getMessage());
 
         // Verify the service method was called
         verify(categoryService, times(1)).removeByIds(categoryIds);
@@ -129,7 +126,6 @@ public class CategoryControllerTests {
         // Assert the response result
         assertNotNull(result);
         assertEquals(result.getCode(), result.getCode());
-        //assertEquals("Electronics", ((Category) result.getData()).getName());
 
         // Verify the service method was called
         verify(categoryService, times(1)).getById(categoryId);
@@ -148,7 +144,6 @@ public class CategoryControllerTests {
         // Assert the response result
         assertNotNull(result);
         assertEquals(result.getCode(), result.getCode());
-        //assertTrue(((List<Category>) result.getData()).size() > 0);
 
         // Verify the service method was called
         verify(categoryService, times(1)).page(any(), any());

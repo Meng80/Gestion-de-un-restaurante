@@ -123,8 +123,6 @@ class JwtInterceptorTests {
         when(userService.getById(anyString())).thenReturn(mockUser);
 
         // Assuming handler is an instance of HandlerMethod
-        //when(handler instanceof HandlerMethod).thenReturn(true);
         assertEquals(true,true);
-        //assertTrue(jwtInterceptor.preHandle(request, response, handler));
     }
 }

@@ -64,8 +64,6 @@ public class RecordControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());  // Assuming Result.success() returns code 200
-        //assertEquals("success", result.getMessage());
         verify(productService, times(1)).getById("1");
         verify(productService, times(1)).updateById(product);
         verify(recordService, times(1)).saveOrUpdate(record);
@@ -82,8 +80,6 @@ public class RecordControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());
-        //assertEquals("success", result.getMessage());
         assertEquals(1, ((List<?>) result.getData()).size());
         assertEquals(10, ((Record) ((List<?>) result.getData()).get(0)).getCount());
         verify(recordService, times(1)).list();
@@ -99,8 +95,6 @@ public class RecordControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());
-        //assertEquals("success", result.getMessage());
         assertEquals(10, ((Record) result.getData()).getCount());
         verify(recordService, times(1)).getById(1);
     }
@@ -119,10 +113,7 @@ public class RecordControllerTests {
 
         // Assert
         assertNotNull(result);
-        //assertEquals(200, result.getCode());
-        //assertEquals("success", result.getMessage());
         assertEquals(1, ((Page<?>) result.getData()).getRecords().size());
-        //assertEquals("Test Product", ((RecordRes) ((Page<?>) result.getData()).getRecords().get(0)).getProduct().getName());
         verify(recordService, times(1)).findRecordPage(any(), any());
     }
 }

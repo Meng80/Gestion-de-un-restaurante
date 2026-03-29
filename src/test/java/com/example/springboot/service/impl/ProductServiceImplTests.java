@@ -28,7 +28,6 @@ public class ProductServiceImplTests {
         product = new Product();
         product.setId(1);
         product.setName("Laptop");
-        //product.setPrice(1000.0);
     }
 
     @Test
@@ -69,7 +68,6 @@ public class ProductServiceImplTests {
         assertNotNull(result, "The product should not be null");
         assertEquals(1, result.getId(), "The product ID should match");
         assertEquals("Laptop", result.getName(), "The product name should match");
-        //assertEquals(1000.0, result.getPrice(), "The product price should match");
 
         // Verify the mapper's method was called once with the expected id
         verify(productMapper, times(1)).selectById(1);

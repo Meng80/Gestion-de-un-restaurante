@@ -31,5 +31,4 @@ public class Result {
     public static Result error(){
         return new Result(Constants.CODE_500, "error system", null);
     }
-
 }
