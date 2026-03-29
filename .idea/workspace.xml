@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added dishCategory and others">
-      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Dish.vue" afterDir="false" />
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added Dish">
       <change afterPath="$PROJECT_DIR$/restaurante/src/views/Order.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/DishController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/DishDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/GoodsSalesDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersCancelDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersConfirmDTO.java" afterDir="false" />
@@ -17,33 +14,25 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersPaymentDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersRejectionDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersSubmitDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Dish.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/OrderDetail.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Orders.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/ShoppingCart.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/exception/OrderBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/DishMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderDetailMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/ShoppingCartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IDishService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/DishServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/DishVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderOverViewVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderPaymentVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderReportVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderStatisticsVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderSubmitVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/DishMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderDetailMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoppingCartMapper.xml.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/UserMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -425,7 +414,7 @@
       <workItem from="1770674784251" duration="25023000" />
       <workItem from="1773423534282" duration="64000" />
       <workItem from="1773423676335" duration="63768000" />
-      <workItem from="1773931040406" duration="87986000" />
+      <workItem from="1773931040406" duration="89157000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -553,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1774821067048</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added Dish">
+      <created>1774821824702</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1774821824702</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +604,8 @@
     <MESSAGE value="Added email verification, product management, category management, and record management." />
     <MESSAGE value="added unit test" />
     <MESSAGE value="added dishCategory and others" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dishCategory and others" />
+    <MESSAGE value="added Dish" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Dish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
