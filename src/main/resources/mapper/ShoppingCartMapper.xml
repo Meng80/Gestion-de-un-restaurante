@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springboot.mapper.ShoppingCartMapper">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into shopping_cart (name, image, table_id, dish_id,number,amount, create_time)
+        values (#{name}, #{image}, #{tableId}, #{dishId},#{number}, #{amount}, #{createTime});
+    </insert>
+
+
+    <insert id="insertBatch">
+        insert into shopping_cart (name, image, table_id, dish_id,number,amount, create_time)
+        values
+        <foreach collection="shoppingCartList" separator="," item="sc">
+            (#{sc.name},#{sc.image},#{sc.tableId},#{sc.dishId},#{sc.number},#{sc.amount},#{sc.createTime})
+        </foreach>
+    </insert>
+
+
+    <update id="updateNumberById">
+        update shopping_cart
+        set number = #{number},
+            amount = #{amount}
+        where id=#{id};
+    </update>
+
+    <delete id="deleteByTableId">
+        delete
+        from shopping_cart
+        where table_id=#{tableId};
+    </delete>
+
+    <delete id="deleteById">
+        delete
+        from shopping_cart
+        where id=#{id};
+    </delete>
+
+    <select id="list" resultType="com.example.springboot.entity.ShoppingCart">
+        SELECT
+        sc.id,
+        sc.table_id,
+        sc.dish_id,
+        sc.name,
+        sc.image,
+        sc.number,
+        (d.price * sc.number) AS amount
+        FROM shopping_cart sc
+        LEFT JOIN dish d ON sc.dish_id = d.id
+        <where>
+            <if test="tableId != null">
+                AND sc.table_id = #{tableId}
+            </if>
+            <if test="dishId != null">
+                AND sc.dish_id = #{dishId}
+            </if>
+        </where>
+        ORDER BY sc.create_time DESC
+    </select>
+
+
+</mapper>

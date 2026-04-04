@@ -6,4 +6,7 @@ public class MessageConstant {
     public static final String ORDER_NOT_FOUND = "Order not found";
     public static final String CATEGORY_BE_RELATED_BY_DISH = "Category is associated with dishes and cannot be deleted";
     public static final String DISH_ON_SALE = "Can not be deleted dish on sale";
+    public static final String DISH_NOT_FOUND = "Dish not found";
+    public static final String CART_ITEM_NOT_FOUND = "Shopping cart not found";
+
 }

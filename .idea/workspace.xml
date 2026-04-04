@@ -5,34 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added Dish">
-      <change afterPath="$PROJECT_DIR$/restaurante/src/views/Order.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatabaseInitialization.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/api/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/api/dish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/api/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/styles/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/Menu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/OrderDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/Orders.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/ShoppingCart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/TableEntry.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/GoodsSalesDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersCancelDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersConfirmDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersPaymentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersRejectionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersSubmitDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/ShoppingCartDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/DishController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/ShoppingCartController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/entity/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/exception/OrderBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderDetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/ShoppingCartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/ShoppingCartServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderOverViewVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderPaymentVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderReportVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderStatisticsVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderSubmitVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderDetailMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoppingCartMapper.xml.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoppingCartMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/MessageConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/MessageConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/config/CorsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/config/InterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/config/InterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +60,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="FxmlFile" />
         <option value="AnnotationType" />
         <option value="Enum" />
+        <option value="CSS File" />
         <option value="Interface" />
-        <option value="Class" />
+        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,12 +126,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -127,16 +148,18 @@
       <recent name="C:\Users\adaya\Desktop\TFG\TFG2023\springboot\src\main\java\com\example\springboot\vo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adaya\Desktop\TFG\TFG2023\springboot\restaurant-client\src\assets" />
       <recent name="C:\Users\TFG2023\springboot\restaurante\src\views" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.springboot.controller.user" />
       <recent name="com.example.springboot.service" />
       <recent name="com.example.springboot.common" />
       <recent name="com.example.springboot.service.impl" />
       <recent name="com.example.springboot" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="npm.serveCliente">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
       <module name="springboot" />
@@ -163,7 +186,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in springboot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in springboot" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="springboot" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -239,8 +262,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="serveAdmin" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/restaurante/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serveCliente" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/restaurant-client/package.json" />
       <command value="run" />
       <scripts>
         <script value="serve" />
@@ -256,12 +289,12 @@
       <item itemvalue="JUnit.com.example.springboot.config.interceptor in springboot" />
       <item itemvalue="JUnit.UserServiceImplTests2" />
       <item itemvalue="JUnit.RoleServiceImplTests" />
-      <item itemvalue="npm.serve" />
+      <item itemvalue="npm.serveAdmin" />
+      <item itemvalue="npm.serveCliente" />
       <item itemvalue="Spring Boot.SpringbootApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in springboot" />
         <item itemvalue="JUnit.RoleServiceImplTests" />
         <item itemvalue="JUnit.UserServiceImplTests2" />
         <item itemvalue="JUnit.com.example.springboot.config.interceptor in springboot" />
@@ -414,7 +447,7 @@
       <workItem from="1770674784251" duration="25023000" />
       <workItem from="1773423534282" duration="64000" />
       <workItem from="1773423676335" duration="63768000" />
-      <workItem from="1773931040406" duration="89157000" />
+      <workItem from="1773931040406" duration="136108000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -549,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1774821824702</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added OrderAdmin">
+      <created>1774822951253</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1774822951253</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +645,8 @@
     <MESSAGE value="added unit test" />
     <MESSAGE value="added dishCategory and others" />
     <MESSAGE value="added Dish" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Dish" />
+    <MESSAGE value="added OrderAdmin" />
+    <option name="LAST_COMMIT_MESSAGE" value="added OrderAdmin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
