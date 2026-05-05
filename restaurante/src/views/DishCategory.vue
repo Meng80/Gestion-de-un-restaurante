@@ -123,25 +123,23 @@ export default {
 
     save() {
       if (this.form.id) {
-        // Has id → update
         this.request.put("/admin/category", this.form).then(res => {
           if (res.code === '200') {
             this.$message.success("Updated successfully");
             this.dialogFormVisible = false;
             this.load();
           } else {
-            this.$message.error("Update failed");
+            this.$message.error(res.msg || "Update failed");
           }
         });
       } else {
-        // No id → add
         this.request.post("/admin/category", this.form).then(res => {
           if (res.code === '200') {
             this.$message.success("Added successfully");
             this.dialogFormVisible = false;
             this.load();
           } else {
-            this.$message.error("Add failed");
+            this.$message.error(res.msg || "Add failed");
           }
         });
       }
@@ -163,7 +161,15 @@ export default {
           this.$message.success("Deleted successfully");
           this.load();
         } else {
-          this.$message.error("Delete failed");
+          this.$message.error(res.msg || "Delete failed");
+        }
+      }).catch(error => {
+        if (error.response && error.response.data && error.response.data.msg) {
+          this.$message.error(error.response.data.msg);
+        } else if (error.response && error.response.data && error.response.data.message) {
+          this.$message.error(error.response.data.message);
+        } else {
+          this.$message.error("Cannot delete, this category may have dishes");
         }
       });
     },
@@ -173,13 +179,25 @@ export default {
     },
 
     delBatch() {
+      if (this.multipleSelection.length === 0) {
+        this.$message.warning("Please select categories to delete");
+        return;
+      }
       let ids = this.multipleSelection.map(v => v.id);
       this.request.delete("/admin/category/del/batch", {data: ids}).then(res => {
         if (res.code === '200') {
           this.$message.success("Successfully deleted");
           this.load();
         } else {
-          this.$message.error("Failed to delete");
+          this.$message.error(res.msg || "Failed to delete");
+        }
+      }).catch(error => {
+        if (error.response && error.response.data && error.response.data.msg) {
+          this.$message.error(error.response.data.msg);
+        } else if (error.response && error.response.data && error.response.data.message) {
+          this.$message.error(error.response.data.message);
+        } else {
+          this.$message.error("Cannot delete, some categories may have dishes");
         }
       });
     },

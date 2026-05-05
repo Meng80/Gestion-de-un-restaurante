@@ -27,7 +27,7 @@
     <select id="countByDishCategoryId" resultType="java.lang.Integer">
         select count(id)
         from dish
-        where dishcategory_id = #{dishcategoryId}
+        where category_id = #{dishCategoryId}
     </select>
 
     <select id="pageQuery" resultType="com.example.springboot.vo.DishVO">

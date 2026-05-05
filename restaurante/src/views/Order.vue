@@ -42,8 +42,8 @@
         @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column prop="id" label="ID" width="50"></el-table-column>
-      <el-table-column prop="numberOrder" label="Order Number" width="100"></el-table-column>
-      <el-table-column prop="numberMesa" label="Table" width="80"></el-table-column>
+      <el-table-column prop="numberOrder" label="Order Number" width="120"></el-table-column>
+      <el-table-column prop="numberMesa" label="Table" width="60"></el-table-column>
       <el-table-column label="Dishes" min-width="180">
         <template slot-scope="scope">
           <div class="dish-list">
@@ -56,7 +56,7 @@
       <el-table-column prop="orderTime" label="Order Time" width="140"></el-table-column>
       <el-table-column prop="amount" label="Amount" width="80">
         <template slot-scope="scope">
-          ¥{{ scope.row.amount }}
+          €{{ scope.row.amount }}
         </template>
       </el-table-column>
       <el-table-column prop="remark" label="Remark" width="120" show-overflow-tooltip></el-table-column>
@@ -109,7 +109,7 @@
         <el-descriptions-item label="Order Number">{{ currentOrder.numberOrder }}</el-descriptions-item>
         <el-descriptions-item label="Table Number">{{ currentOrder.numberMesa }}</el-descriptions-item>
         <el-descriptions-item label="Order Time">{{ currentOrder.orderTime }}</el-descriptions-item>
-        <el-descriptions-item label="Amount">¥{{ currentOrder.amount }}</el-descriptions-item>
+        <el-descriptions-item label="Amount">€{{ currentOrder.amount }}</el-descriptions-item>
         <el-descriptions-item label="Status">
           <el-tag :type="getStatusType(currentOrder.status)">
             {{ getStatusText(currentOrder.status) }}
@@ -125,12 +125,12 @@
           <el-table-column prop="number" label="Quantity" width="100"></el-table-column>
           <el-table-column prop="price" label="Price" width="100">
             <template slot-scope="scope">
-              ¥{{ scope.row.price }}
+              €{{ (scope.row.amount / scope.row.number).toFixed(2) }}
             </template>
           </el-table-column>
           <el-table-column label="Subtotal" width="120">
             <template slot-scope="scope">
-              ¥{{ (scope.row.price * scope.row.number).toFixed(2) }}
+              €{{ scope.row.amount.toFixed(2) }}
             </template>
           </el-table-column>
         </el-table>
@@ -157,11 +157,11 @@ export default {
       multipleSelection: [],
       activeStatus: "all",
       statusList: [
-        { key: "all", name: "All Orders", value: null },
-        { key: "pending", name: "Pending", value: 2 },
-        { key: "shipping", name: "Shipping", value: 3 },
-        { key: "completed", name: "Completed", value: 4 },
-        { key: "cancelled", name: "Cancelled", value: 5 }
+        { key: "all", name: "Todos los pedidos", value: null },
+        { key: "pending", name: "Pendiente", value: 2 },
+        { key: "shipping", name: "Preparando", value: 3 },
+        { key: "completed", name: "Completado", value: 4 },
+        { key: "cancelled", name: "Cancelado", value: 5 }
       ],
       statusCount: {
         all: 0,
@@ -259,6 +259,7 @@ export default {
       this.request.get(`/admin/order/details/${row.id}`).then(res => {
         if (res.code === '200') {
           this.currentOrderDetail = res.data.orderDetailList || [];
+          console.log('Order item sample:', this.currentOrderDetail[0]);
         }
       });
       this.dialogVisible = true;
@@ -364,11 +365,11 @@ export default {
 
     getStatusText(status) {
       const statusMap = {
-        1: "Pending Payment",
-        2: "Pending",
-        3: "Shipping",
-        4: "Completed",
-        5: "Cancelled"
+        1: "Pendiente de pago",
+        2: "Pendiente",
+        3: "Preparando",
+        4: "Completado",
+        5: "Cancelado"
       };
       return statusMap[status] || "Unknown";
     },

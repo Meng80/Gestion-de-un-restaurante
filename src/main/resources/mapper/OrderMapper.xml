@@ -4,9 +4,9 @@
 
     <insert id="insert" parameterType="com.example.springboot.entity.Orders" useGeneratedKeys="true" keyProperty="id">
         insert into orders
-        (number, status, number_order,number_mesa,order_time, checkout_time, pay_method, pay_status, amount, remark,
+        (status, number_order,number_mesa,order_time, checkout_time, pay_method, pay_status, amount, remark,
          delivery_time)
-        values (#{number}, #{status}, #{numberOrder}, #{numberMesa}, #{orderTime}, #{checkoutTime}, #{payMethod},
+        values (#{status}, #{numberOrder}, #{numberMesa}, #{orderTime}, #{checkoutTime}, #{payMethod},
                 #{payStatus}, #{amount}, #{remark}, #{deliveryTime})
     </insert>
 
@@ -107,5 +107,11 @@
         group by name
         order by number desc
         limit 0, 10
+    </select>
+
+    <select id="getByNumberOrder" resultType="com.example.springboot.entity.Orders">
+        select *
+        from orders
+        where number_order = #{numberOrder}
     </select>
 </mapper>

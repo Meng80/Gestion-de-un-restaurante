@@ -1,18 +1,20 @@
 package com.example.springboot.controller.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Data
 public class OrdersSubmitDTO implements Serializable {
 
-    private int payMethod;
-
     private String remark;
+
+    @TableField("number_mesa")
+    private Integer numberMesa;
+
+    private BigDecimal amount;
 
 
 }

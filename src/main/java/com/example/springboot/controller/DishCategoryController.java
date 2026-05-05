@@ -2,9 +2,12 @@ package com.example.springboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.springboot.common.MessageConstant;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.DishCategoryDTO;
 import com.example.springboot.entity.DishCategory;
+import com.example.springboot.exception.DeletionNotAllowedException;
+import com.example.springboot.mapper.DishMapper;
 import com.example.springboot.service.IDishCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,6 +27,9 @@ public class DishCategoryController {
 
     @Autowired
     private IDishCategoryService dishCategoryService;
+
+    @Autowired
+    private DishMapper dishMapper;
 
     @GetMapping("/list")
     public Result list(@RequestParam(required = false) Integer status){
@@ -68,13 +74,17 @@ public class DishCategoryController {
      * @param ids
      * @return
      */
-
     @DeleteMapping("/del/batch")
-    public Result deleteBatch(@RequestBody List<Integer> ids) {
+    public Result deleteBatch(@RequestBody List<Long> ids) {
+        for (Long id : ids) {
+            Integer count = dishMapper.countByDishCategoryId(id);
+            if (count > 0) {
+                throw new DeletionNotAllowedException(MessageConstant.CATEGORY_BE_RELATED_BY_DISH);
+            }
+        }
         dishCategoryService.removeByIds(ids);
         return Result.success();
     }
-
     /**
      * Update category
      * @param dishCategoryDTO
@@ -93,9 +103,9 @@ public class DishCategoryController {
      * @param id
      * @return
      */
-    @PostMapping("/status/{status}")
+    @PutMapping("/status/{status}")
     @ApiOperation("StartOrStop Category")
-    public Result startOrStop(@PathVariable("status") Integer status, Long id){
+    public Result startOrStop(@PathVariable("status") Integer status, @RequestParam Long id){
         dishCategoryService.startOrStop(status,id);
         return Result.success();
     }

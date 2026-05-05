@@ -2,11 +2,50 @@
   <div class="menu-page">
     <van-nav-bar title="Restaurant" fixed placeholder>
       <template #right>
-        <van-icon name="cart-o" :badge="cartTotalCount" @click="goToCart" />
+        <van-icon name="cart-o" :badge="cartTotalCount" @click="goToCart" style="margin-right: 16px;" />
+        <van-icon name="orders-o" @click="goToOrderHistory" />
       </template>
     </van-nav-bar>
 
-    <div class="menu-container">
+    <div class="search-bar">
+      <van-search
+          v-model="searchKeyword"
+          placeholder="Search by dish name"
+          shape="round"
+          background="#f5f5f5"
+          @search="onSearch"
+          @clear="clearSearch"
+          clearable
+      />
+    </div>
+
+    <div class="search-results" v-if="searched && searchKeyword">
+      <div v-if="searchResults.length > 0" class="dish-list">
+        <div v-for="dish in searchResults" :key="dish.id" class="dish-card">
+          <div class="dish-image">
+            <img :src="dish.image || '/default-dish.png'" :alt="dish.name" />
+          </div>
+          <div class="dish-info">
+            <h4>{{ dish.name }}</h4>
+            <p class="description">{{ dish.description || 'No description available' }}</p>
+            <div class="dish-footer">
+              <span class="price">€{{ dish.price }}</span>
+              <div class="quantity-control">
+                <van-stepper
+                    v-model="dish.quantity"
+                    min="0"
+                    :max="99"
+                    @change="updateCart(dish)"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <van-empty v-else description="No dishes found" />
+    </div>
+
+    <div class="menu-container" v-else>
       <van-sidebar v-model="activeCategory" @change="onCategoryChange">
         <van-sidebar-item
             v-for="cat in categories"
@@ -22,7 +61,7 @@
           </div>
           <div class="dish-info">
             <h4>{{ dish.name }}</h4>
-            <p class="description">{{ dish.description || 'Este plato aún no tiene descripción ' }}</p>
+            <p class="description">{{ dish.description || 'No description available' }}</p>
             <div class="dish-footer">
               <span class="price">€{{ dish.price }}</span>
               <div class="quantity-control">
@@ -37,24 +76,24 @@
           </div>
         </div>
 
-        <van-empty v-if="dishes.length === 0" description="No hay platos disponibles" />
+        <van-empty v-if="dishes.length === 0" description="No dishes available" />
       </div>
     </div>
 
     <div class="cart-bar" v-if="cartTotalCount > 0" @click="goToCart">
       <div class="cart-info">
         <van-icon name="cart-o" />
-        <span>ShoppingCart ({{ cartTotalCount }})</span>
-        <span class="total-price">¥{{ cartTotalPrice }}</span>
+        <span>Shopping Cart: {{ cartTotalCount }}</span>
+        <span class="total-price">€{{ cartTotalPrice }}</span>
       </div>
-      <van-button type="primary" size="small">去结算</van-button>
+      <van-button type="primary" size="small">Shopping Cart</van-button>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import { getCategoryList, getDishList } from '@/api/dish'
+import { getCategoryList, getDishList, searchDishes } from '@/api/dish'
 import { addToCart, getCartList } from '@/api/cart'
 
 export default {
@@ -63,16 +102,21 @@ export default {
     return {
       categories: [],
       dishes: [],
-      activeCategory: 0
+      activeCategory: 0,
+      searchKeyword: '',
+      searchResults: [],
+      searched: false
     }
   },
   computed: {
     ...mapState(['cart']),
     ...mapGetters(['cartTotalCount', 'cartTotalPrice']),
+    tableId() {
+      return this.$store.state.tableId
+    }
   },
   mounted() {
     this.loadCategories()
-
   },
   methods: {
     ...mapMutations(['UPDATE_CART_ITEM', 'SET_CART']),
@@ -96,9 +140,19 @@ export default {
           this.SET_CART(vuexCart)
         }
 
+        const searchItem = this.searchResults.find(i => i.id === dish.id)
+        if (searchItem) {
+          searchItem.quantity = dish.quantity
+        }
+
+        const menuItem = this.dishes.find(i => i.id === dish.id)
+        if (menuItem) {
+          menuItem.quantity = dish.quantity
+        }
+
       } catch (error) {
-        console.error('Add shopping cart error:', error)
-        this.$toast.fail('add fail')
+        console.error('Add to cart error:', error)
+        this.$toast.fail('Add failed')
       }
     },
 
@@ -111,11 +165,11 @@ export default {
             this.loadDishes(this.categories[0].id)
           }
         } else {
-          this.$toast.fail(res.msg || 'Add category fail')
+          this.$toast.fail(res.msg || 'Load categories failed')
         }
       } catch (error) {
-        console.error('Add category fail:', error)
-        this.$toast.fail('Load dishes fail')
+        console.error('Load categories error:', error)
+        this.$toast.fail('Load categories failed')
       }
     },
 
@@ -128,12 +182,46 @@ export default {
             quantity: this.getCartQuantity(dish.id)
           }))
         } else {
-          this.$toast.fail(res.msg || 'Load dishes fail')
+          this.$toast.fail(res.msg || 'Load dishes failed')
         }
       } catch (error) {
-        console.error('Load dishes fail:', error)
-        this.$toast.fail('Load dishes fail')
+        console.error('Load dishes error:', error)
+        this.$toast.fail('Load dishes failed')
       }
+    },
+
+    async onSearch() {
+      if (!this.searchKeyword.trim()) {
+        this.searched = false
+        this.searchResults = []
+        return
+      }
+
+      this.searched = true
+
+      try {
+        const res = await searchDishes(this.searchKeyword.trim())
+        if (res.code === '200') {
+          // 处理分页数据（因为使用的是 /page 接口）
+          const records = res.data.records || res.data || []
+          this.searchResults = records.map(dish => ({
+            ...dish,
+            quantity: this.getCartQuantity(dish.id)
+          }))
+        } else {
+          this.searchResults = []
+        }
+      } catch (error) {
+        console.error('Search error:', error)
+        this.searchResults = []
+        this.$toast.fail('Search failed')
+      }
+    },
+
+    clearSearch() {
+      this.searchKeyword = ''
+      this.searchResults = []
+      this.searched = false
     },
 
     onCategoryChange(index) {
@@ -147,6 +235,15 @@ export default {
 
     goToCart() {
       this.$router.push('/cart')
+    },
+
+    goToOrderHistory() {
+      const tableId = this.tableId
+      if (!tableId) {
+        this.$toast('No table number found')
+        return
+      }
+      this.$router.push(`/history-order?tableId=${tableId}`)
     }
   }
 }
@@ -159,9 +256,21 @@ export default {
   padding-bottom: 60px;
 }
 
+.search-bar {
+  position: sticky;
+  top: 46px;
+  z-index: 10;
+  background: #f5f5f5;
+  padding: 8px 0;
+}
+
+.search-results {
+  padding: 10px;
+  min-height: calc(100vh - 120px);
+}
+
 .menu-container {
   display: flex;
-  margin-top: 46px;
 }
 
 .van-sidebar {

@@ -1,9 +1,11 @@
 package com.example.springboot.service;
 
+import cn.hutool.db.PageResult;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.springboot.controller.dto.*;
 import com.example.springboot.entity.Orders;
 import com.example.springboot.vo.OrderStatisticsVO;
+import com.example.springboot.vo.OrderSubmitVO;
 import com.example.springboot.vo.OrderVO;
 
 public interface IOrderService extends IService<Orders> {
@@ -54,4 +56,27 @@ public interface IOrderService extends IService<Orders> {
      * @param id
      */
     void deliver(Long id);
+
+    /**
+     * User Cancel Order by Id
+     * @param id
+     */
+    void userCancelById(Long id) throws Exception;
+
+    /**
+     * User submit Order
+     * @param ordersSubmitDTO
+     * @return
+     */
+    OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO);
+
+    /**
+     * Get by Number Order
+     * @param numberOrder
+     * @return
+     */
+    OrderVO getByNumberOrder(String numberOrder);
+
+
+
 }

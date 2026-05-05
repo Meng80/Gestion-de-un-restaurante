@@ -5,16 +5,21 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.springboot.common.Result;
 import com.example.springboot.controller.dto.OrdersCancelDTO;
 import com.example.springboot.controller.dto.OrdersConfirmDTO;
+import com.example.springboot.entity.OrderDetail;
 import com.example.springboot.entity.Orders;
+import com.example.springboot.mapper.OrderDetailMapper;
 import com.example.springboot.service.IOrderService;
 import com.example.springboot.vo.OrderStatisticsVO;
 import com.example.springboot.vo.OrderVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,6 +33,9 @@ public class OrderController {
 
     @Autowired
     private IOrderService orderService;
+
+    @Autowired
+    private OrderDetailMapper orderDetailMapper;
 
 
     /**
@@ -146,7 +154,21 @@ public class OrderController {
         if (status != null) {
             queryWrapper.eq("status", status);
         }
-        return Result.success(orderService.page(new Page<>(pageNum, pageSize), queryWrapper));
+        Page<Orders> page = orderService.page(new Page<>(pageNum, pageSize), queryWrapper);
+
+        List<OrderVO> orderVOList = new ArrayList<>();
+        for (Orders order : page.getRecords()) {
+            OrderVO orderVO = new OrderVO();
+            BeanUtils.copyProperties(order, orderVO);
+            List<OrderDetail> orderDetailList = orderDetailMapper.getByOrderId(order.getId());
+            orderVO.setOrderDetailList(orderDetailList);
+            orderVOList.add(orderVO);
+        }
+
+        Page<OrderVO> resultPage = new Page<>(page.getCurrent(), page.getSize(), page.getTotal());
+        resultPage.setRecords(orderVOList);
+
+        return Result.success(resultPage);
     }
 
 

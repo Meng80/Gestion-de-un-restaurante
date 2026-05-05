@@ -10,12 +10,26 @@
       </div>
 
       <van-field
-          v-model="tableId"
+          v-model="displayTableId"
           label="Table Number"
-          placeholder="Enter your table number"
-          type="number"
-          clearable
+          placeholder="Select table number (1-20)"
+          readonly
+          clickable
+          :right-icon="arrowDown"
+          @click="showPicker = true"
       />
+
+      <van-popup v-model="showPicker" position="bottom" round>
+        <van-picker
+            :columns="tableOptions"
+            title="Choose your table"
+            show-toolbar
+            :confirm-button-text="'Confirm'"
+            :cancel-button-text="'Cancel'"
+            @confirm="onConfirm"
+            @cancel="showPicker = false"
+        />
+      </van-popup>
 
       <van-button
           type="primary"
@@ -23,7 +37,7 @@
           :disabled="!tableId"
           @click="enterRestaurant"
       >
-       Order Food
+        Order Food
       </van-button>
     </div>
   </div>
@@ -34,15 +48,29 @@ export default {
   name: 'TableEntry',
   data() {
     return {
-      tableId: ''
+      displayTableId: '',
+      tableId: null,
+      showPicker: false,
+      tableOptions: Array.from({ length: 20 }, (_, i) => `Table ${i + 1}`)
+    }
+  },
+  computed: {
+    arrowDown() {
+      return 'arrow-down'
     }
   },
   methods: {
+    onConfirm(value) {
+      this.displayTableId = value
+      const match = value.match(/\d+/)
+      this.tableId = match ? parseInt(match[0]) : null
+      this.showPicker = false
+    },
     enterRestaurant() {
-      // 保存桌号到 Vuex 和 localStorage
-      this.$store.commit('SET_TABLE_ID', this.tableId)
-      // 跳转到点餐页面
-      this.$router.push('/menu')
+      if (this.tableId) {
+        this.$store.commit('SET_TABLE_ID', this.tableId)
+        this.$router.push('/menu')
+      }
     }
   }
 }
@@ -81,6 +109,8 @@ export default {
 
 .van-field {
   margin: 20px 0;
+  background: #fff;
+  border-radius: 8px;
 }
 
 .van-button {

@@ -29,14 +29,13 @@ request.interceptors.request.use(
     }
 )
 
-// 响应拦截器
 request.interceptors.response.use(
     response => {
         const res = response.data
         if (res.code === '200') {
             return res
         } else {
-            Toast.fail(res.msg || '请求失败')
+            Toast.fail(res.msg || 'Fail')
             return Promise.reject(new Error(res.msg || 'Error'))
         }
     },

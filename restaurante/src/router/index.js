@@ -15,6 +15,7 @@ const routes = [
     redirect: "/home",
     children: [
       { path: 'home', name: 'home', component:() => import('../views/Home.vue')},
+      { path: 'workspace', name: 'workspace', component: () => import('../views/Workspace.vue') },
       { path: 'user', name: 'user', component:() => import('../views/User.vue')},
       { path: 'role', name: 'role', component:() => import('../views/Role.vue')},
       { path: 'file', name: 'file', component:() => import('../views/File.vue')},

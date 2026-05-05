@@ -29,6 +29,20 @@
         </template>
       </van-card>
 
+      <div class="remark-section">
+        <van-field
+            v-model="remark"
+            type="textarea"
+            label="Remark"
+            label-width="60px"
+            placeholder="Special requests? (e.g., no spicy, extra sauce, allergies...)"
+            rows="2"
+            autosize
+            maxlength="200"
+            show-word-limit
+        />
+      </div>
+
       <div class="total">
         <div class="total-info">
           <span>Total：</span>
@@ -54,7 +68,8 @@ export default {
   data() {
     return {
       cartList: [],
-      tableId: localStorage.getItem('tableId') || ''
+      tableId: localStorage.getItem('tableId') || '',
+      remark: ''
     }
   },
   computed: {
@@ -103,10 +118,10 @@ export default {
           this.$toast.success('Delete')
         } else if (newNumber > oldNumber) {
           const diff = newNumber - oldNumber
-          await addToCart({ dishId: item.dishId, number: diff })
+          await addToCart({dishId: item.dishId, number: diff})
         } else if (newNumber < oldNumber) {
           const diff = oldNumber - newNumber
-          await subCart({ dishId: item.dishId, number: diff })
+          await subCart({dishId: item.dishId, number: diff})
         }
         await this.loadCartList()
       } catch (error) {
@@ -154,6 +169,7 @@ export default {
         await clearCart()
         this.$toast.success('Clear success')
         this.cartList = []
+        this.remark = ''
         this.$store.commit('CLEAR_CART')
       } catch (error) {
         console.error('Clear Error:', error)
@@ -163,7 +179,7 @@ export default {
 
     async submitOrder() {
       if (!this.tableId) {
-        this.$toast('Please chose un table number')
+        this.$toast('Please choose a table number')
         this.$router.push('/')
         return
       }
@@ -174,35 +190,51 @@ export default {
       }
 
       const orderData = {
-        tableId: parseInt(this.tableId),
-        totalAmount: this.totalPrice,
-        items: this.cartList.map(item => ({
-          dishId: item.dishId,
-          name: item.name,
-          price: item.amount / item.number,
-          quantity: item.number
-        }))
+        numberMesa: parseInt(this.tableId),
+        amount: parseFloat(this.totalPrice),
+        remark: this.remark || ''
       }
 
       try {
         const res = await submitOrder(orderData)
         if (res.code === '200') {
-          this.$toast.success('Submit Order Success')
-          await clearCart()
-          this.cartList = []
-          this.$store.commit('CLEAR_CART')
-          this.$router.push(`/order-detail/${res.data}`)
+          const orderNumber = res.data.orderNumber || res.data.id
+
+          // 保存最新订单信息到 localStorage
+          const latestOrder = {
+            orderNumber: orderNumber,
+            tableId: this.tableId,
+            orderTime: new Date().toISOString()
+          }
+          localStorage.setItem('latestOrder', JSON.stringify(latestOrder))
+
+          // 清空购物车
+          await this.clearCartAfterSubmit()
+
+          // 跳转到订单页面
+          this.$router.push('/orders')
         }
       } catch (error) {
         console.error('Submit Order Error:', error)
-        this.$toast.fail('Submit Order Error')
+        this.$toast.fail('Submit Order Failed')
+      }
+    },
+
+    async clearCartAfterSubmit() {
+      try {
+        await clearCart()
+        this.cartList = []
+        this.remark = ''
+        this.$store.commit('CLEAR_CART')
+      } catch (error) {
+        console.error('Clear cart error:', error)
       }
     },
 
     goToMenu() {
       this.$router.push('/menu')
     }
-  }
+  },
 }
 </script>
 
@@ -215,6 +247,13 @@ export default {
 
 .van-card {
   margin-bottom: 8px;
+}
+
+.remark-section {
+  background: #fff;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 8px 0;
 }
 
 .total {

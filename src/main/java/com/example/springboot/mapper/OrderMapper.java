@@ -75,4 +75,11 @@ public interface OrderMapper extends BaseMapper<Orders> {
      * @param end
      */
     List<GoodsSalesDTO> getSalesTop10(LocalDateTime begin, LocalDateTime end);
+
+    /**
+     * Get by NumberOrder
+     * @param numberOrder
+     * @return
+     */
+    Orders getByNumberOrder(@Param("numberOrder") String numberOrder);
 }

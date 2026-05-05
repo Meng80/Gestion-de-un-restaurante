@@ -5,9 +5,11 @@ import com.example.springboot.common.MessageConstant;
 import com.example.springboot.controller.dto.*;
 import com.example.springboot.entity.*;
 import com.example.springboot.exception.OrderBusinessException;
+import com.example.springboot.exception.ShoppingCartBusinessException;
 import com.example.springboot.mapper.*;
 import com.example.springboot.service.IOrderService;
 import com.example.springboot.vo.OrderStatisticsVO;
+import com.example.springboot.vo.OrderSubmitVO;
 import com.example.springboot.vo.OrderVO;
 import com.github.pagehelper.Page;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +20,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +33,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
 
     @Autowired
     private OrderDetailMapper orderDetailMapper;
+
+    @Autowired
+    private ShoppingCartMapper shoppingCartMapper;
 
 
     /**
@@ -169,8 +175,6 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
         orderMapper.update(orders);
     }
 
-
-
     /**
      * Convert orders to OrderVO
      * @param page
@@ -204,4 +208,108 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
         return String.join("", orderDishList);
     }
 
+    /**
+     * User cancel order by Id
+     * @param id
+     */
+    @Override
+    public void userCancelById(Long id) {
+        Orders orderDB = orderMapper.getById(id);
+        if (orderDB == null) {
+            throw new OrderBusinessException(MessageConstant.ORDER_NOT_FOUND);
+        }
+
+        if (orderDB.getStatus() > 2) {
+            throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
+        }
+
+        Orders orders = new Orders();
+        orders.setId(orderDB.getId());
+        orders.setStatus(Orders.CANCELLED);
+        orders.setCancelReason("User Cancel");
+        orders.setCancelTime(LocalDateTime.now());
+
+        orderMapper.update(orders);
+    }
+
+    /**
+     * User submit Order
+     * @param ordersSubmitDTO
+     * @return
+     */
+    @Override
+    public OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO) {
+
+
+
+        Integer tableId = ordersSubmitDTO.getNumberMesa();
+        if (tableId == null) {
+            throw new ShoppingCartBusinessException("TableId cant be null");
+        }
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setTableId(Long.valueOf(tableId));
+
+
+        List<ShoppingCart> shoppingCartList = shoppingCartMapper.list(shoppingCart);
+        if (shoppingCartList == null || shoppingCartList.size() == 0) {
+            throw new ShoppingCartBusinessException(MessageConstant.SHOPPING_CART_IS_NULL);
+        }
+
+        Orders order = new Orders();
+        BeanUtils.copyProperties(ordersSubmitDTO,order);
+        order.setNumberMesa(tableId);
+        order.setNumberOrder(String.valueOf(System.currentTimeMillis()));
+        order.setStatus(Orders.TO_BE_CONFIRMED);
+        order.setPayStatus(Orders.UN_PAID);
+        order.setOrderTime(LocalDateTime.now());
+        orderMapper.insert(order);
+
+        ArrayList<OrderDetail> orderDetailList = new ArrayList<>();
+        shoppingCartList.forEach(cart->{
+            OrderDetail orderDetail = new OrderDetail();
+            BeanUtils.copyProperties(cart, orderDetail);
+            orderDetail.setOrderId(order.getId());
+            orderDetailList.add(orderDetail);
+        });
+
+        orderDetailMapper.insertBatch(orderDetailList);
+
+        shoppingCartMapper.deleteByTableId(Long.valueOf(tableId));
+
+        OrderSubmitVO submitVO = OrderSubmitVO.builder()
+                .id(order.getId())
+                .orderNumber(order.getNumberOrder())
+                .orderAmount(order.getAmount())
+                .orderTime(order.getOrderTime())
+                .build();
+
+        return submitVO;
+    }
+
+    /**
+     * Get order detail by number order
+     * @param numberOrder
+     * @return
+     */
+    @Override
+    public OrderVO getByNumberOrder(String numberOrder) {
+        Orders orders = orderMapper.getByNumberOrder(numberOrder);
+        if (orders == null) {
+            throw new OrderBusinessException(MessageConstant.ORDER_NOT_FOUND);
+        }
+
+        OrderVO orderVO = new OrderVO();
+        BeanUtils.copyProperties(orders, orderVO);
+
+        List<OrderDetail> orderDetailList = orderDetailMapper.getByOrderId(orders.getId());
+        orderVO.setOrderDetailList(orderDetailList);
+
+        String orderDishStr = getOrderDishStr(orders);
+        orderVO.setOrderDishes(orderDishStr);
+
+        return orderVO;
+    }
+
 }
+

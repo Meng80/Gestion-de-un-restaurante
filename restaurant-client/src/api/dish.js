@@ -22,3 +22,14 @@ export function getDishList(params) {
         params
     })
 }
+
+
+export const searchDishes = (keyword) => {
+    return request({
+        url: 'user/dish/search',
+        method: 'get',
+        params: {
+            keyword: keyword,
+        }
+    })
+}
