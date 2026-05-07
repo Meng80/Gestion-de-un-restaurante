@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added Dish">
-      <change afterPath="$PROJECT_DIR$/restaurant-client/src/api/order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/HistoryOrder.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-client/src/views/Orders.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/public/sounds/preview.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/public/sounds/reminder.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/public/sounds/reminder.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/restaurante/src/views/Workspace.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/WebSocketConfiguration.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/WorkSpaceController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/GoodsSalesDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/exception/ShoppingCartBusinessException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IWorkspaceService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/WorkspaceServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/BusinessDataVO.java" afterDir="false" />
@@ -23,26 +25,16 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/OrderSubmitVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/SalesTop10ReportVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/vo/TurnoverReportVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/websocket/WebSocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/api/dish.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/api/dish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/views/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/views/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/views/ShoppingCart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/views/ShoppingCart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/views/TableEntry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/views/TableEntry.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurante/src/views/DishCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/DishCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-client/src/api/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/api/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-client/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/views/Orders.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurante/src/views/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/MessageConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/common/MessageConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/DishCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/DishCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersSubmitDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/dto/OrdersSubmitDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/mapper/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DishMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DishMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +108,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
@@ -141,6 +134,7 @@
       <recent name="C:\Users\adaya\Desktop\TFG\TFG2023\springboot\src\main\java\com\example\springboot\vo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adaya\Desktop\TFG\TFG2023\springboot\restaurante\public\sounds" />
       <recent name="C:\Users\adaya\Desktop\TFG\TFG2023\springboot\restaurant-client\src\assets" />
       <recent name="C:\Users\TFG2023\springboot\restaurante\src\views" />
     </key>
@@ -152,7 +146,7 @@
       <recent name="com.example.springboot" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+  <component name="RunManager" selected="npm.serveAdmin">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
       <module name="springboot" />
@@ -440,7 +434,7 @@
       <workItem from="1770674784251" duration="25023000" />
       <workItem from="1773423534282" duration="64000" />
       <workItem from="1773423676335" duration="63768000" />
-      <workItem from="1773931040406" duration="238451000" />
+      <workItem from="1773931040406" duration="258461000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -589,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1775321428021</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add cancel order, order history, search feature; fix category deletion and cart null bug">
+      <created>1777991351886</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1777991351886</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +648,8 @@
     <MESSAGE value="added Dish" />
     <MESSAGE value="added OrderAdmin" />
     <MESSAGE value="added Cliente Category, Dish and Shopping Cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Cliente Category, Dish and Shopping Cart" />
+    <MESSAGE value="add cancel order, order history, search feature; fix category deletion and cart null bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cancel order, order history, search feature; fix category deletion and cart null bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
