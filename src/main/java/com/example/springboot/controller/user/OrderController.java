@@ -8,6 +8,7 @@ import com.example.springboot.entity.Orders;
 import com.example.springboot.service.IOrderService;
 import com.example.springboot.vo.OrderSubmitVO;
 import com.example.springboot.vo.OrderVO;
+import com.example.springboot.websocket.WebSocketServer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,9 @@ public class OrderController {
     @Autowired
     private IOrderService orderService;
 
+    @Autowired
+    private WebSocketServer webSocketServer;
+
     /**
      * User submit order
      * @param ordersSubmitDTO
@@ -33,6 +37,7 @@ public class OrderController {
     public Result submit(@RequestBody OrdersSubmitDTO ordersSubmitDTO) {
         log.info("User submit order：{}", ordersSubmitDTO);
         OrderSubmitVO orderSubmitVO = orderService.submitOrder(ordersSubmitDTO);
+        webSocketServer.sendToAllClient("NEW_ORDER:" + ordersSubmitDTO.getNumberMesa());
         return Result.success(orderSubmitVO);
     }
 
@@ -94,6 +99,20 @@ public class OrderController {
         Page<Orders> page = orderService.page(new Page<>(pageNum, pageSize), queryWrapper);
 
         return Result.success(page);
+    }
+
+
+    /**
+     * Customer reminder
+     * @param id OrderID
+     * @return
+     */
+    @PostMapping("/reminder/{id}")
+    @ApiOperation("Customer reminder to hurry up")
+    public Result reminder(@PathVariable Long id) {
+        log.info("Customer reminder，OrderID：{}", id);
+        String result = orderService.reminder(id);
+        return Result.success(result);
     }
 }
 

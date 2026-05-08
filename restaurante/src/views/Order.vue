@@ -146,6 +146,11 @@
 <script>
 export default {
   name: "Order",
+  beforeDestroy() {
+    if (this.websocket) {
+      this.websocket.close()
+    }
+  },
   data() {
     return {
       tableData: [],
@@ -172,12 +177,15 @@ export default {
       },
       dialogVisible: false,
       currentOrder: null,
-      currentOrderDetail: []
+      currentOrderDetail: [],
+      websocket: null,
+      wsConnected: false
     };
   },
   created() {
     this.load();
     this.loadStatusCount();
+    this.initWebSocket();
   },
   methods: {
     load() {
@@ -347,6 +355,108 @@ export default {
       }).catch(() => {
         this.$message.info("Operation cancelled");
       });
+    },
+
+    initWebSocket() {
+      const wsUrl = 'ws://localhost:9090/ws/admin'
+      this.websocket = new WebSocket(wsUrl)
+
+      this.websocket.onopen = () => {
+        console.log('WebSocket connected successfully')
+        this.wsConnected = true
+      }
+
+      this.websocket.onmessage = (event) => {
+        console.log('receive message:', event.data)
+        const message = event.data
+
+        if (message.startsWith('NEW_ORDER:')) {
+          const tableId = message.split(':')[1]
+          this.handleNewOrder(tableId)
+        }
+
+        if (message.startsWith('REMINDER:')) {
+          const parts = message.split(':')
+          const orderId = parts[1]
+          const tableId = parts[2]
+          this.handleReminder(orderId, tableId)
+        }
+      }
+
+      this.websocket.onerror = (error) => {
+        console.error('WebSocket Error:', error)
+        this.wsConnected = false
+      }
+
+      this.websocket.onclose = () => {
+        this.wsConnected = false
+        setTimeout(() => {
+          this.initWebSocket()
+        }, 5000)
+      }
+    },
+
+    handleNewOrder(tableId) {
+      this.load()
+      this.loadStatusCount()
+
+      this.$notify({
+        title: 'New Order Alert',
+        message: `Table  ${tableId} has a new order`,
+        type: 'warning',
+        duration: 0,
+        position: 'top-right'
+      })
+
+      this.playVoice()
+    },
+
+    handleReminder(orderId, tableId) {
+      this.load()
+      this.loadStatusCount()
+
+      this.$notify({
+        title: '🔔 Customer Reminder',
+        message: `Table  ${tableId} - Order #${orderId} is being rushed. Please handle it as soon as possible!`,
+        type: 'warning',
+        duration: 10000,
+        position: 'top-right'
+      })
+
+      this.playReminderVoice()
+
+      this.highlightOrder(orderId)
+    },
+
+    playVoice() {
+      const audio = new Audio('/sounds/preview.mp3')
+      audio.play().catch(err => {
+        console.log('Audio playback failed (user interaction required first):', err)
+        this.$message.info('Click anywhere on the page to enable sound notifications')
+      })
+    },
+
+    playReminderVoice() {
+      const audio = new Audio('/sounds/reminder.mp4')
+      audio.play().catch(err => {
+        console.log('Reminder sound playback failed:', err)
+      })
+    },
+
+    highlightOrder(orderId) {
+      this.$nextTick(() => {
+        const rows = document.querySelectorAll('.el-table__row')
+        rows.forEach(row => {
+          const firstCell = row.querySelector('td:first-child .cell')
+          if (firstCell && firstCell.innerText == orderId) {
+            row.style.backgroundColor = '#fff3e0'
+            row.style.transition = 'background-color 0.5s'
+            setTimeout(() => {
+              row.style.backgroundColor = ''
+            }, 5000)
+          }
+        })
+      })
     },
 
     handleSelectionChange(val) {

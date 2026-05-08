@@ -53,3 +53,10 @@ export function cancelOrder(id) {
         method: 'put'
     })
 }
+
+export const reminderOrder = (id) => {
+    return request({
+        url: `/user/order/reminder/${id}`,
+        method: 'post'
+    })
+}

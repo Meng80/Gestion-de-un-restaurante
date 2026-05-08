@@ -103,6 +103,12 @@
       </div>
     </div>
 
+    <div class="action-buttons" v-if="canReminder">
+      <van-button type="warning" block @click="handleReminder" :loading="reminderLoading">
+        🔔 Reminder (Hurry Up)
+      </van-button>
+    </div>
+
     <van-empty v-else-if="searched && !order" description="Order not found" />
 
     <div class="tip" v-else-if="!latestOrder && !searched">
@@ -113,7 +119,7 @@
 </template>
 
 <script>
-import { searchOrderByNumber, cancelOrder } from '@/api/order'
+import { searchOrderByNumber, cancelOrder, reminderOrder  } from '@/api/order'
 import { Dialog, Toast } from 'vant'
 
 export default {
@@ -124,12 +130,16 @@ export default {
       order: null,
       loading: false,
       searched: false,
-      latestOrder: null
+      latestOrder: null,
+      reminderLoading: false
     }
   },
   computed: {
     canCancel() {
       return this.order && (this.order.status === 1 || this.order.status === 2)
+    },
+    canReminder() {
+      return this.order && (this.order.status === 2 || this.order.status === 3)
     }
   },
   mounted() {
@@ -206,6 +216,24 @@ export default {
         }
       }).catch(() => {})
     },
+
+    async handleReminder() {
+      this.reminderLoading = true
+      try {
+        const res = await reminderOrder(this.order.id)
+        if (res.code === '200') {
+          Toast.success(res.msg || 'Reminder sent, restaurant notified')
+        } else {
+          Toast.fail(res.msg || 'Reminder failed')
+        }
+      } catch (error) {
+        console.error('Reminder error:', error)
+        Toast.fail('Reminder failed, please try again')
+      } finally {
+        this.reminderLoading = false
+      }
+    },
+
 
     getStatusText(status) {
       const map = { 1: 'To Pay', 2: 'Pending', 3: 'Preparing', 4: 'Completed', 5: 'Cancelled' }

@@ -11,6 +11,7 @@ import com.example.springboot.service.IOrderService;
 import com.example.springboot.vo.OrderStatisticsVO;
 import com.example.springboot.vo.OrderSubmitVO;
 import com.example.springboot.vo.OrderVO;
+import com.example.springboot.websocket.WebSocketServer;
 import com.github.pagehelper.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -20,7 +21,6 @@ import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,6 +36,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
 
     @Autowired
     private ShoppingCartMapper shoppingCartMapper;
+
+    @Autowired
+    private WebSocketServer webSocketServer;
 
 
     /**
@@ -309,6 +312,31 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
         orderVO.setOrderDishes(orderDishStr);
 
         return orderVO;
+    }
+
+
+    /**
+     * Customer reminder
+     * @param id OrderID
+     * @return Result reminder
+     */
+    @Override
+    public String reminder(Long id) {
+        Orders order = this.getById(id);
+
+        if (order == null) {
+            throw new OrderBusinessException(MessageConstant.ORDER_NOT_FOUND);
+        }
+
+        if (order.getStatus() != Orders.TO_BE_CONFIRMED && order.getStatus() != Orders.CONFIRMED) {
+            throw new OrderBusinessException("Only pending confirmation or preparing orders can be reminded");
+        }
+
+        String message = "REMINDER:" + order.getId() + ":" + order.getNumberMesa();
+        webSocketServer.sendToAllClient(message);
+        log.info("Reminder sent successfully, Order ID: {}, Table Number: {}", order.getId(), order.getNumberMesa());
+
+        return "Reminder sent successfully, restaurant has been notified";
     }
 
 }

@@ -1,6 +1,6 @@
 package com.example.springboot.service;
 
-import cn.hutool.db.PageResult;
+
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.springboot.controller.dto.*;
 import com.example.springboot.entity.Orders;
@@ -76,6 +76,14 @@ public interface IOrderService extends IService<Orders> {
      * @return
      */
     OrderVO getByNumberOrder(String numberOrder);
+
+
+    /**
+     * Customer reminder
+     * @param id OrderID
+     * @return Result reminder
+     */
+    String reminder(Long id);
 
 
 
