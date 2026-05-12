@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Toast } from 'vant'
 
 const request = axios.create({
-    baseURL: process.env.VUE_APP_BASE_API || 'http://localhost:9090',
+    baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:9090',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json'

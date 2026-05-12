@@ -358,7 +358,9 @@ export default {
     },
 
     initWebSocket() {
-      const wsUrl = 'ws://localhost:9090/ws/admin'
+      const wsUrl = process.env.NODE_ENV === 'production'
+          ? 'ws://localhost/ws/admin'
+          : 'ws://localhost:9090/ws/admin'
       this.websocket = new WebSocket(wsUrl)
 
       this.websocket.onopen = () => {

@@ -2,7 +2,7 @@ import axios from 'axios'
 import ElementUI from 'element-ui';
 
 const request = axios.create( {
-    baseURL: 'http://localhost:9090',
+    baseURL:  process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:9090',
     timeout: 5000
 })
 

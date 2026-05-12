@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="added Dish">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_2_7_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_3_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurante/public/sounds/preview.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurante/public/sounds/reminder.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/config/WebSocketConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/websocket/WebSocketServer.java" afterDir="false" />
+    <list default="true" id="9c579e08-a022-4a91-895c-f699ed98f6b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/restaurant-client/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurante/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot/controller/DishCategoryControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/api/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/api/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-client/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/views/Orders.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-client/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-client/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurante/src/utils/reques.js" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/utils/reques.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurante/src/views/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/restaurante/src/views/Order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/controller/user/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/service/impl/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +122,7 @@
       <recent name="com.example.springboot" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serveCliente">
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.springboot.utils.CodeGenerator" />
       <module name="springboot" />
@@ -417,7 +410,7 @@
       <workItem from="1770674784251" duration="25023000" />
       <workItem from="1773423534282" duration="64000" />
       <workItem from="1773423676335" duration="63768000" />
-      <workItem from="1773931040406" duration="262282000" />
+      <workItem from="1773931040406" duration="281162000" />
     </task>
     <task id="LOCAL-00001" summary="Add files">
       <created>1689000665001</created>
@@ -580,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778184424313</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added alerts and order reminder">
+      <created>1778240426300</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1778240426300</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +640,8 @@
     <MESSAGE value="added Cliente Category, Dish and Shopping Cart" />
     <MESSAGE value="add cancel order, order history, search feature; fix category deletion and cart null bug" />
     <MESSAGE value="Added Workspace Dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Workspace Dashboard" />
+    <MESSAGE value="Added alerts and order reminder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added alerts and order reminder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
